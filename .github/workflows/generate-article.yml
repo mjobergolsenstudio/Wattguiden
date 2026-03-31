@@ -1,0 +1,37 @@
+name: Generer ukentlig artikkel
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'  # Hver mandag kl. 08:00 norsk tid (07:00 UTC)
+  workflow_dispatch:       # Kan også kjøres manuelt fra GitHub
+
+jobs:
+  generer-artikkel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent koden
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sett opp Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installer avhengigheter
+        run: npm install @anthropic-ai/sdk
+
+      - name: Kjør artikkelgenerator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node generer_artikkel.js
+
+      - name: Push ny artikkel til GitHub
+        run: |
+          git config user.name "Wattguiden Bot"
+          git config user.email "bot@wattguiden.no"
+          git add artikler/
+          git diff --staged --quiet || git commit -m "Automatisk artikkel $(date +'%Y-%m-%d')"
+          git push
