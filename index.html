@@ -499,33 +499,50 @@ footer {
   <div class="hero-right">
     <div class="live-price-card">
       <div class="live-card-header">
-        <div class="live-card-title">Dagens strømpris</div>
+        <div class="live-card-title">Strmpriser</div>
         <div class="live-indicator"><div class="live-dot"></div>LIVE</div>
       </div>
-      <div class="current-price-big" id="hero-price">–</div>
-      <div class="current-price-sub" id="hero-price-sub">kr/kWh inkl. mva. · laster...</div>
-      <div class="zone-pills">
+
+      <div class="zone-pills" style="margin-bottom:14px">
         <div class="zone-pill active" onclick="byttHeroSone('NO1',this)">NO1 Oslo</div>
-        <div class="zone-pill" onclick="byttHeroSone('NO2',this)">NO2 Sør</div>
+        <div class="zone-pill" onclick="byttHeroSone('NO2',this)">NO2 Sr</div>
         <div class="zone-pill" onclick="byttHeroSone('NO3',this)">NO3 Midt</div>
         <div class="zone-pill" onclick="byttHeroSone('NO4',this)">NO4 Nord</div>
         <div class="zone-pill" onclick="byttHeroSone('NO5',this)">NO5 Vest</div>
       </div>
-      <div class="mini-chart-wrap">
-        <canvas id="miniChart"></canvas>
+
+      <div id="period-tabs" style="display:flex;gap:0;background:var(--dark3);border-radius:10px;padding:3px;margin-bottom:16px">
+        <button class="ptab active" data-p="igaar" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:var(--dark2);color:var(--text);transition:all .2s">I gr</button>
+        <button class="ptab" data-p="idag" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:none;color:var(--text-muted);transition:all .2s">I dag</button>
+        <button class="ptab" data-p="imorgen" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:none;color:var(--text-muted);transition:all .2s">I morgen</button>
+        <button class="ptab" data-p="1mnd" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:none;color:var(--text-muted);transition:all .2s">1 mnd</button>
+        <button class="ptab" data-p="6mnd" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:none;color:var(--text-muted);transition:all .2s">6 mnd</button>
+        <button class="ptab" data-p="12mnd" style="flex:1;border:none;font-family:inherit;font-size:11px;font-weight:700;padding:7px 2px;border-radius:8px;cursor:pointer;background:none;color:var(--text-muted);transition:all .2s">12 mnd</button>
       </div>
-      <div class="price-highlights">
-        <div class="price-highlight">
-          <div class="ph-label">Laveste i dag</div>
-          <div class="ph-value low" id="hero-low">–</div>
-        </div>
-        <div class="price-highlight">
-          <div class="ph-label">Høyeste i dag</div>
-          <div class="ph-value high" id="hero-high">–</div>
-        </div>
+
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
+        <div class="current-price-big" id="hero-price" style="font-size:42px">&#x2013;</div>
+        <div style="font-size:13px;color:var(--text-muted)">kr/kWh</div>
+        <div id="hero-trend" style="font-size:13px;font-weight:700;margin-left:4px"></div>
+      </div>
+      <div class="current-price-sub" id="hero-price-sub" style="margin-bottom:14px">laster...</div>
+
+      <div style="height:120px;position:relative">
+        <div id="chartLoadMsg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-muted)">Laster...</div>
+        <canvas id="miniChart" style="display:none"></canvas>
+      </div>
+
+      <div class="price-highlights" style="margin-top:12px">
+        <div class="price-highlight"><div class="ph-label" id="lbl-low">Laveste</div><div class="ph-value low" id="hero-low">&#x2013;</div></div>
+        <div class="price-highlight"><div class="ph-label" id="lbl-high">Hyeste</div><div class="ph-value high" id="hero-high">&#x2013;</div></div>
+        <div class="price-highlight"><div class="ph-label">Snitt</div><div class="ph-value" id="hero-avg" style="color:var(--gold)">&#x2013;</div></div>
+        <div class="price-highlight"><div class="ph-label" id="lbl-extra">N</div><div class="ph-value" id="hero-extra" style="color:var(--text)">&#x2013;</div></div>
+      </div>
+
+      <div id="tomorrow-notice" style="display:none;margin-top:12px;background:rgba(63,185,80,0.08);border:1px solid rgba(63,185,80,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--text-muted);text-align:center">
+        Morgendagens priser publiseres av Nordpool kl. 13:00
       </div>
     </div>
-  </div>
 </section>
 
 <div class="divider"></div>
@@ -892,86 +909,242 @@ footer {
 
 <script>
 // ─── LIVE STRØMPRISER ───
-let prisData = {};
+let allPrisData = {};
 let miniChart = null;
-let currentHeroSone = 'NO1';
+let currentSone = 'NO1';
+let currentPeriode = 'igaar';
 
-async function hentPriser(sone) {
-  if (prisData[sone]) return prisData[sone];
-  const d = new Date();
-  const url = `https://www.hvakosterstrommen.no/api/v1/prices/${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}_${sone}.json`;
+function datoStr(d) {
+  return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+async function hentDag(sone, dato) {
+  const key = sone + '_' + dato;
+  if (allPrisData[key]) return allPrisData[key];
+  const url = `https://www.hvakosterstrommen.no/api/v1/prices/${dato}_${sone}.json`;
   try {
     const r = await fetch(url);
     if (!r.ok) throw 0;
-    prisData[sone] = await r.json();
+    allPrisData[key] = await r.json();
   } catch {
-    // Fallback testdata
-    prisData[sone] = Array.from({length:24}, (_,i) => {
-      const b=0.65, m=i>=6&&i<=9?0.22:0, k=i>=17&&i<=20?0.28:0, n=i<=5?-0.18:0;
-      return { NOK_per_kWh: Math.max(0.28, b+m+k+n+(Math.random()*0.07-0.035)), time_start: new Date(new Date().setHours(i,0,0,0)).toISOString() };
-    });
+    allPrisData[key] = null;
   }
-  return prisData[sone];
+  return allPrisData[key];
 }
 
-async function oppdaterTicker() {
-  const soner = ['NO1','NO2','NO3','NO4','NO5'];
-  for (const sone of soner) {
-    const data = await hentPriser(sone);
-    const now = new Date().getHours();
-    const pris = (data[now]?.NOK_per_kWh * 1.25).toFixed(2);
-    const snitt = data.reduce((a,b)=>a+b.NOK_per_kWh,0)/data.length*1.25;
-    const cls = parseFloat(pris) < snitt ? 'price-down' : 'price-up';
-    const tekst = `${pris} kr/kWh`;
-    document.getElementById(`t-${sone}`).textContent = tekst;
-    document.getElementById(`t-${sone}`).className = cls;
-    document.getElementById(`t-${sone}b`).textContent = tekst;
-    document.getElementById(`t-${sone}b`).className = cls;
-  }
+function fallbackDag(offset=0) {
+  return Array.from({length:24}, (_,i) => {
+    const b=0.65+offset*0.05, m=i>=6&&i<=9?0.22:0, k=i>=17&&i<=20?0.28:0, n=i<=5?-0.18:0;
+    return { NOK_per_kWh: Math.max(0.28, b+m+k+n+(Math.random()*0.07-0.035)), time_start: new Date(new Date().setHours(i,0,0,0)).toISOString() };
+  });
 }
 
-async function oppdaterHeroKort(sone) {
-  const data = await hentPriser(sone);
-  const now = new Date().getHours();
-  const curr = data[now]?.NOK_per_kWh * 1.25 || 0;
-  const priser = data.map(d => d.NOK_per_kWh * 1.25);
-  const low = Math.min(...priser);
-  const high = Math.max(...priser);
+async function hentHistorisk(sone, dager) {
+  const results = [];
+  const now = new Date();
+  for (let i = dager-1; i >= 0; i--) {
+    const d = new Date(now);
+    d.setDate(d.getDate() - i);
+    const dato = datoStr(d);
+    const dagData = await hentDag(sone, dato);
+    if (dagData) {
+      const snitt = dagData.reduce((a,b)=>a+b.NOK_per_kWh,0)/dagData.length;
+      results.push({ dato: d.toLocaleDateString('no-NO',{day:'numeric',month:'short'}), snitt });
+    }
+  }
+  return results;
+}
 
-  document.getElementById('hero-price').textContent = curr.toFixed(2) + ' kr';
-  document.getElementById('hero-price-sub').textContent = `kr/kWh inkl. mva. · Sone ${sone} · time ${now}:00`;
-  document.getElementById('hero-low').textContent = low.toFixed(2) + ' kr';
-  document.getElementById('hero-high').textContent = high.toFixed(2) + ' kr';
-
-  // Mini chart
+function tegnChart(labels, data, type='bar', erHistorisk=false) {
   const canvas = document.getElementById('miniChart');
-  const labels = data.map((_,i) => i % 4 === 0 ? `${i}:00` : '');
-  const colors = priser.map((p,i) => i === now ? 'rgba(232,184,75,1)' : p < low + (high-low)*0.33 ? 'rgba(63,185,80,0.7)' : p > high - (high-low)*0.33 ? 'rgba(248,81,73,0.6)' : 'rgba(88,166,212,0.6)');
+  const loadMsg = document.getElementById('chartLoadMsg');
+  loadMsg.style.display = 'none';
+  canvas.style.display = 'block';
+
+  const avg = data.reduce((a,b)=>a+b,0)/data.length;
+  const now = new Date().getHours();
+
+  let colors;
+  if (erHistorisk) {
+    colors = data.map(p => p < avg*0.85 ? 'rgba(63,185,80,0.7)' : p > avg*1.15 ? 'rgba(248,81,73,0.65)' : 'rgba(88,166,212,0.65)');
+  } else {
+    const low = Math.min(...data), high = Math.max(...data);
+    colors = data.map((p,i) => i===now&&!erHistorisk ? 'rgba(232,184,75,1)' : p < low+(high-low)*0.33 ? 'rgba(63,185,80,0.7)' : p > high-(high-low)*0.33 ? 'rgba(248,81,73,0.65)' : 'rgba(88,166,212,0.65)');
+  }
+
   if (miniChart) miniChart.destroy();
   miniChart = new Chart(canvas.getContext('2d'), {
-    type: 'bar',
-    data: { labels, datasets: [{ data: priser, backgroundColor: colors, borderRadius: 2, borderSkipped: false }] },
+    type: type === 'line' ? 'line' : 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: type==='line' ? 'rgba(232,184,75,0.15)' : colors,
+        borderColor: type==='line' ? 'rgba(232,184,75,0.8)' : 'transparent',
+        borderWidth: type==='line' ? 2 : 0,
+        borderRadius: 2,
+        fill: type==='line',
+        tension: 0.4,
+        pointRadius: 0,
+      }]
+    },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y.toFixed(2)} kr/kWh` }, backgroundColor: '#131720', borderColor: 'rgba(232,184,75,0.3)', borderWidth: 1, titleColor: '#e8b84b', bodyColor: '#f0f4fc' } },
+      plugins: { legend:{display:false}, tooltip:{ callbacks:{label:c=>` ${c.parsed.y.toFixed(2)} kr/kWh`}, backgroundColor:'#131720', borderColor:'rgba(232,184,75,0.3)', borderWidth:1, titleColor:'#e8b84b', bodyColor:'#f0f4fc' } },
       scales: {
-        x: { grid: { display: false }, ticks: { color: '#8d97b0', font: { size: 9 }, maxRotation: 0 } },
-        y: { display: false }
+        x: { grid:{display:false}, ticks:{color:'#8d97b0', font:{size:9}, maxRotation:0, maxTicksLimit:8} },
+        y: { display:false }
       }
     }
   });
 }
 
+async function oppdaterKort() {
+  const sone = currentSone;
+  const periode = currentPeriode;
+  const now = new Date();
+  const today = datoStr(now);
+  const igaar = datoStr(new Date(now.getTime() - 86400000));
+  const imorgen = datoStr(new Date(now.getTime() + 86400000));
+
+  document.getElementById('chartLoadMsg').style.display = 'flex';
+  document.getElementById('miniChart').style.display = 'none';
+  document.getElementById('tomorrow-notice').style.display = 'none';
+
+  if (periode === 'igaar') {
+    let data = await hentDag(sone, igaar) || fallbackDag(-1);
+    const priser = data.map(d=>d.NOK_per_kWh*1.25);
+    const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
+    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    document.getElementById('hero-price').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-price-sub').textContent = `Snitt i går · Sone ${sone} · inkl. mva`;
+    document.getElementById('hero-low').textContent = Math.min(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-high').textContent = Math.max(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-avg').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-extra').textContent = '–';
+    document.getElementById('lbl-low').textContent = 'Laveste';
+    document.getElementById('lbl-high').textContent = 'Høyeste';
+    document.getElementById('lbl-extra').textContent = 'Nå';
+    tegnChart(labels, priser, 'bar', false);
+
+  } else if (periode === 'idag') {
+    let data = await hentDag(sone, today) || fallbackDag(0);
+    const priser = data.map(d=>d.NOK_per_kWh*1.25);
+    const h = now.getHours();
+    const curr = priser[h] || priser[0];
+    const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
+    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    const badge = curr < avg*0.85 ? '🟢 Lav' : curr > avg*1.15 ? '🔴 Høy' : '🟡 Normal';
+    document.getElementById('hero-price').textContent = curr.toFixed(2)+' kr';
+    document.getElementById('hero-trend').textContent = badge;
+    document.getElementById('hero-price-sub').textContent = `Nå (${h}:00) · Sone ${sone} · inkl. mva`;
+    document.getElementById('hero-low').textContent = Math.min(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-high').textContent = Math.max(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-avg').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-extra').textContent = curr.toFixed(2)+' kr';
+    document.getElementById('lbl-low').textContent = 'Laveste';
+    document.getElementById('lbl-high').textContent = 'Høyeste';
+    document.getElementById('lbl-extra').textContent = 'Nå';
+    tegnChart(labels, priser, 'bar', false);
+
+  } else if (periode === 'imorgen') {
+    let data = await hentDag(sone, imorgen);
+    if (!data) {
+      // Not available yet
+      document.getElementById('hero-price').textContent = '–';
+      document.getElementById('hero-trend').textContent = '';
+      document.getElementById('hero-price-sub').textContent = 'Ikke tilgjengelig ennå';
+      document.getElementById('hero-low').textContent = '–';
+      document.getElementById('hero-high').textContent = '–';
+      document.getElementById('hero-avg').textContent = '–';
+      document.getElementById('hero-extra').textContent = '–';
+      document.getElementById('tomorrow-notice').style.display = 'block';
+      document.getElementById('chartLoadMsg').style.display = 'flex';
+      document.getElementById('chartLoadMsg').textContent = 'Tilgjengelig etter kl. 13:00';
+      document.getElementById('miniChart').style.display = 'none';
+      return;
+    }
+    const priser = data.map(d=>d.NOK_per_kWh*1.25);
+    const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
+    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    document.getElementById('hero-price').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-trend').textContent = '';
+    document.getElementById('hero-price-sub').textContent = `Snitt i morgen · Sone ${sone} · inkl. mva`;
+    document.getElementById('hero-low').textContent = Math.min(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-high').textContent = Math.max(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-avg').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-extra').textContent = '–';
+    document.getElementById('lbl-low').textContent = 'Laveste';
+    document.getElementById('lbl-high').textContent = 'Høyeste';
+    document.getElementById('lbl-extra').textContent = '';
+    tegnChart(labels, priser, 'bar', false);
+
+  } else {
+    // Historical: 1mnd=30, 6mnd=180, 12mnd=365
+    const dagerMap = {'1mnd':30,'6mnd':180,'12mnd':365};
+    const dager = dagerMap[periode];
+    const hist = await hentHistorisk(sone, dager);
+    if (!hist.length) return;
+    const priser = hist.map(h=>h.snitt*1.25);
+    const labels = hist.map((h,i) => i%(Math.ceil(dager/8))===0 ? h.dato : '');
+    const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
+    const periodNavn = {'1mnd':'siste 30 dager','6mnd':'siste 6 måneder','12mnd':'siste 12 måneder'};
+    document.getElementById('hero-price').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-trend').textContent = '';
+    document.getElementById('hero-price-sub').textContent = `Snittpris ${periodNavn[periode]} · Sone ${sone}`;
+    document.getElementById('hero-low').textContent = Math.min(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-high').textContent = Math.max(...priser).toFixed(2)+' kr';
+    document.getElementById('hero-avg').textContent = avg.toFixed(2)+' kr';
+    document.getElementById('hero-extra').textContent = priser[priser.length-1]?.toFixed(2)+' kr';
+    document.getElementById('lbl-low').textContent = 'Lavest';
+    document.getElementById('lbl-high').textContent = 'Høyest';
+    document.getElementById('lbl-extra').textContent = 'I går';
+    tegnChart(labels, priser, 'line', true);
+  }
+}
+
+// Period tab click
+document.getElementById('period-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.ptab');
+  if (!btn) return;
+  document.querySelectorAll('.ptab').forEach(b => {
+    b.style.background = 'none';
+    b.style.color = 'var(--text-muted)';
+  });
+  btn.style.background = 'var(--dark2)';
+  btn.style.color = 'var(--text)';
+  currentPeriode = btn.dataset.p;
+  document.getElementById('hero-trend').textContent = '';
+  oppdaterKort();
+});
+
+async function oppdaterTicker() {
+  const soner = ['NO1','NO2','NO3','NO4','NO5'];
+  const today = datoStr(new Date());
+  for (const sone of soner) {
+    const data = await hentDag(sone, today) || fallbackDag(0);
+    const now = new Date().getHours();
+    const pris = (data[now]?.NOK_per_kWh * 1.25).toFixed(2);
+    const snitt = data.reduce((a,b)=>a+b.NOK_per_kWh,0)/data.length*1.25;
+    const cls = parseFloat(pris) < snitt ? 'price-down' : 'price-up';
+    const tekst = `${pris} kr/kWh`;
+    const el1 = document.getElementById(`t-${sone}`);
+    const el2 = document.getElementById(`t-${sone}b`);
+    if(el1){el1.textContent=tekst;el1.className=cls;}
+    if(el2){el2.textContent=tekst;el2.className=cls;}
+  }
+}
+
 function byttHeroSone(sone, btn) {
   document.querySelectorAll('.zone-pill').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-  currentHeroSone = sone;
-  oppdaterHeroKort(sone);
+  currentSone = sone;
+  oppdaterKort();
 }
 
-// Init
+// Init — default show igaar
 oppdaterTicker();
-oppdaterHeroKort('NO1');
+oppdaterKort();
 
 // ─── KALKULATOR ───
 function beregn() {
