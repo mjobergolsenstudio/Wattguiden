@@ -993,7 +993,7 @@ function tegnChart(labels, data, type='bar', erHistorisk=false) {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend:{display:false}, tooltip:{ callbacks:{label:c=>` ${c.parsed.y.toFixed(2)} kr/kWh`}, backgroundColor:'#131720', borderColor:'rgba(232,184,75,0.3)', borderWidth:1, titleColor:'#e8b84b', bodyColor:'#f0f4fc' } },
       scales: {
-        x: { grid:{display:false}, ticks:{color:'#8d97b0', font:{size:9}, maxRotation:0, maxTicksLimit:8} },
+        x: { grid:{display:false}, ticks:{color:'#8d97b0', font:{size:8}, maxRotation:45, autoSkip:false} },
         y: { display:false }
       }
     }
@@ -1016,7 +1016,7 @@ async function oppdaterKort() {
     let data = await hentDag(sone, igaar) || fallbackDag(-1);
     const priser = data.map(d=>d.NOK_per_kWh*1.25);
     const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
-    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    const labels = data.map((_,i) => `${String(i).padStart(2,'0')}:00`);
     document.getElementById('hero-price').textContent = avg.toFixed(2)+' kr';
     document.getElementById('hero-price-sub').textContent = `Snitt i går · Sone ${sone} · inkl. mva`;
     document.getElementById('hero-low').textContent = Math.min(...priser).toFixed(2)+' kr';
@@ -1034,7 +1034,7 @@ async function oppdaterKort() {
     const h = now.getHours();
     const curr = priser[h] || priser[0];
     const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
-    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    const labels = data.map((_,i) => `${String(i).padStart(2,'0')}:00`);
     const badge = curr < avg*0.85 ? '🟢 Lav' : curr > avg*1.15 ? '🔴 Høy' : '🟡 Normal';
     document.getElementById('hero-price').textContent = curr.toFixed(2)+' kr';
     document.getElementById('hero-trend').textContent = badge;
@@ -1067,7 +1067,7 @@ async function oppdaterKort() {
     }
     const priser = data.map(d=>d.NOK_per_kWh*1.25);
     const avg = priser.reduce((a,b)=>a+b,0)/priser.length;
-    const labels = data.map((_,i) => i%4===0?`${i}:00`:'');
+    const labels = data.map((_,i) => `${String(i).padStart(2,'0')}:00`);
     document.getElementById('hero-price').textContent = avg.toFixed(2)+' kr';
     document.getElementById('hero-trend').textContent = '';
     document.getElementById('hero-price-sub').textContent = `Snitt i morgen · Sone ${sone} · inkl. mva`;
