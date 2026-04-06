@@ -1,432 +1,353 @@
-
-
 ```html
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Jærkraft vs Cheap Energy – vi sammenligner priser, påslag og vilkår for å finne ut hvem som er billigst i 2026. Oppdatert analyse.">
-    <title>Jærkraft vs Cheap Energy – hvem er billigst? | Wattguiden.no</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #0b0f17;
-            color: #f0f4fc;
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        a {
-            color: #e8b84b;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 1.5rem 1.25rem;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-logo span:first-child {
-            color: #f0f4fc;
-        }
-
-        .nav-logo span:last-child {
-            color: #e8b84b;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: #8d97b0;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover {
-            color: #e8b84b;
-            text-decoration: none;
-        }
-
-        main {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 1rem 1.25rem 4rem;
-        }
-
-        .breadcrumb {
-            font-size: 0.85rem;
-            color: #8d97b0;
-            margin-bottom: 1.5rem;
-        }
-
-        .breadcrumb a {
-            color: #8d97b0;
-        }
-
-        .breadcrumb a:hover {
-            color: #e8b84b;
-        }
-
-        .meta-date {
-            font-size: 0.88rem;
-            color: #8d97b0;
-            margin-bottom: 0.75rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-            color: #f0f4fc;
-        }
-
-        h1 span {
-            color: #e8b84b;
-        }
-
-        .intro {
-            font-size: 1.1rem;
-            color: #8d97b0;
-            margin-bottom: 2rem;
-            line-height: 1.75;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: #f0f4fc;
-            letter-spacing: -0.3px;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 1.75rem;
-            margin-bottom: 0.75rem;
-            color: #e8b84b;
-        }
-
-        p {
-            margin-bottom: 1.15rem;
-        }
-
-        .factbox {
-            background: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-left: 4px solid #e8b84b;
-            border-radius: 10px;
-            padding: 1.75rem 2rem;
-            margin: 2rem 0 2.5rem;
-        }
-
-        .factbox-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #e8b84b;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-        }
-
-        .factbox ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .factbox ul li {
-            padding: 0.45rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #f0f4fc;
-            font-size: 0.97rem;
-        }
-
-        .factbox ul li::before {
-            content: "⚡";
-            position: absolute;
-            left: 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0 2rem;
-            background: #131720;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .comparison-table thead {
-            background: rgba(232, 184, 75, 0.1);
-        }
-
-        .comparison-table th {
-            padding: 1rem 1.25rem;
-            text-align: left;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: #e8b84b;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .comparison-table td {
-            padding: 0.85rem 1.25rem;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            color: #f0f4fc;
-        }
-
-        .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table tbody tr:hover {
-            background: rgba(232, 184, 75, 0.04);
-        }
-
-        .highlight-cell {
-            color: #e8b84b;
-            font-weight: 600;
-        }
-
-        .card {
-            background: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 10px;
-            padding: 1.75rem 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .pros-cons .card {
-            margin: 0;
-        }
-
-        .pros-cons h3 {
-            margin-top: 0;
-        }
-
-        .pros-cons ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .pros-cons ul li {
-            padding: 0.35rem 0;
-            font-size: 0.95rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .pros-cons .pros li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #4ade80;
-            font-weight: 700;
-        }
-
-        .pros-cons .cons li::before {
-            content: "✗";
-            position: absolute;
-            left: 0;
-            color: #f87171;
-            font-weight: 700;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(232,184,75,0.12) 0%, rgba(232,184,75,0.04) 100%);
-            border: 1px solid rgba(232,184,75,0.25);
-            border-radius: 12px;
-            padding: 2.25rem 2rem;
-            margin: 3rem 0 2rem;
-            text-align: center;
-        }
-
-        .cta-box h2 {
-            margin-top: 0;
-            color: #e8b84b;
-            font-size: 1.4rem;
-        }
-
-        .cta-box p {
-            color: #8d97b0;
-            max-width: 540px;
-            margin: 0.5rem auto 1.5rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #e8b84b;
-            color: #0b0f17;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 0.9rem 2.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .cta-button:hover {
-            background: #f5cc6a;
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
-
-        .muted {
-            color: #8d97b0;
-        }
-
-        footer {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-logo span:first-child {
-            color: #f0f4fc;
-        }
-
-        .footer-logo span:last-child {
-            color: #e8b84b;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.82rem;
-            color: #8d97b0;
-            max-width: 520px;
-            margin: 0.75rem auto 0;
-            line-height: 1.6;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .footer-links a {
-            color: #8d97b0;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 1.65rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .pros-cons {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.7rem 0.75rem;
-                font-size: 0.85rem;
-            }
-
-            .factbox {
-                padding: 1.25rem 1.25rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Jærkraft vs Cheap Energy – vi sammenligner priser, påslag og vilkår for 2026. Finn ut hvem som er billigst for din strømregning.">
+<title>Jærkraft vs Cheap Energy – hvem er billigst? | Wattguiden.no</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+background: #0b0f17;
+color: #f0f4fc;
+line-height: 1.7;
+font-size: 17px;
+}
+a {
+color: #e8b84b;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+max-width: 900px;
+margin: 0 auto;
+padding: 24px 20px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.logo {
+font-size: 1.5rem;
+font-weight: 800;
+letter-spacing: -0.5px;
+}
+.logo span:first-child {
+color: #f0f4fc;
+}
+.logo span:last-child {
+color: #e8b84b;
+}
+nav ul {
+list-style: none;
+display: flex;
+gap: 22px;
+}
+nav ul li a {
+color: #8d97b0;
+font-size: 0.95rem;
+font-weight: 500;
+}
+nav ul li a:hover {
+color: #e8b84b;
+}
+main {
+max-width: 780px;
+margin: 0 auto;
+padding: 48px 20px 60px;
+}
+.breadcrumb {
+font-size: 0.85rem;
+color: #8d97b0;
+margin-bottom: 28px;
+}
+.breadcrumb a {
+color: #8d97b0;
+}
+.breadcrumb a:hover {
+color: #e8b84b;
+}
+.meta-line {
+font-size: 0.88rem;
+color: #8d97b0;
+margin-bottom: 12px;
+}
+h1 {
+font-size: 2.2rem;
+font-weight: 800;
+line-height: 1.25;
+margin-bottom: 18px;
+letter-spacing: -0.5px;
+}
+h2 {
+font-size: 1.45rem;
+font-weight: 700;
+margin-top: 44px;
+margin-bottom: 16px;
+color: #f0f4fc;
+letter-spacing: -0.3px;
+}
+h3 {
+font-size: 1.15rem;
+font-weight: 600;
+margin-top: 28px;
+margin-bottom: 10px;
+color: #e8b84b;
+}
+p {
+margin-bottom: 16px;
+color: #f0f4fc;
+}
+.muted {
+color: #8d97b0;
+}
+.factbox {
+background: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-left: 4px solid #e8b84b;
+border-radius: 10px;
+padding: 28px 30px;
+margin: 30px 0 36px;
+}
+.factbox-title {
+font-weight: 700;
+font-size: 1.05rem;
+color: #e8b84b;
+margin-bottom: 14px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.factbox ul {
+list-style: none;
+padding: 0;
+}
+.factbox ul li {
+padding: 6px 0;
+padding-left: 22px;
+position: relative;
+color: #f0f4fc;
+font-size: 0.97rem;
+}
+.factbox ul li::before {
+content: "✓";
+position: absolute;
+left: 0;
+color: #e8b84b;
+font-weight: 700;
+}
+.comparison-table {
+width: 100%;
+border-collapse: collapse;
+margin: 28px 0 32px;
+font-size: 0.95rem;
+}
+.comparison-table th {
+background: #131720;
+color: #e8b84b;
+font-weight: 700;
+text-align: left;
+padding: 14px 16px;
+border-bottom: 2px solid rgba(255,255,255,0.07);
+}
+.comparison-table td {
+padding: 13px 16px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+color: #f0f4fc;
+}
+.comparison-table tr:hover td {
+background: rgba(232,184,75,0.04);
+}
+.card {
+background: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 10px;
+padding: 28px 30px;
+margin: 28px 0;
+}
+.highlight {
+color: #e8b84b;
+font-weight: 600;
+}
+.cta-box {
+background: linear-gradient(135deg, #131720 0%, #1a1f2e 100%);
+border: 1px solid #e8b84b;
+border-radius: 12px;
+padding: 36px 34px;
+text-align: center;
+margin: 48px 0 20px;
+}
+.cta-box h2 {
+margin-top: 0;
+color: #e8b84b;
+font-size: 1.4rem;
+}
+.cta-box p {
+color: #8d97b0;
+margin-bottom: 22px;
+}
+.cta-btn {
+display: inline-block;
+background: #e8b84b;
+color: #0b0f17;
+font-weight: 700;
+font-size: 1.05rem;
+padding: 14px 36px;
+border-radius: 8px;
+transition: opacity 0.2s;
+}
+.cta-btn:hover {
+opacity: 0.88;
+text-decoration: none;
+}
+ul.pros-list, ul.content-list {
+margin: 12px 0 20px 20px;
+}
+ul.pros-list li, ul.content-list li {
+margin-bottom: 7px;
+}
+footer {
+max-width: 900px;
+margin: 0 auto;
+padding: 32px 20px;
+border-top: 1px solid rgba(255,255,255,0.07);
+text-align: center;
+font-size: 0.85rem;
+color: #8d97b0;
+}
+footer .footer-logo {
+font-size: 1.15rem;
+font-weight: 800;
+margin-bottom: 8px;
+}
+footer .footer-logo span:first-child {
+color: #f0f4fc;
+}
+footer .footer-logo span:last-child {
+color: #e8b84b;
+}
+@media (max-width: 600px) {
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.25rem; }
+nav ul { gap: 14px; }
+.factbox, .card, .cta-box { padding: 22px 18px; }
+.comparison-table { font-size: 0.85rem; }
+.comparison-table th, .comparison-table td { padding: 10px 10px; }
+}
+</style>
 </head>
 <body>
 
 <nav>
-    <div class="nav-logo"><span>Watt</span><span>guiden</span></div>
-    <ul>
-        <li><a href="index.html">Hjem</a></li>
-        <li><a href="index.html#kalkulator">Kalkulator</a></li>
-        <li><a href="index.html#leverandorer">Leverandører</a></li>
-    </ul>
+<div class="logo"><span>Watt</span><span>guiden</span></div>
+<ul>
+<li><a href="index.html">Forside</a></li>
+<li><a href="index.html#kalkulator">Kalkulator</a></li>
+<li><a href="index.html#artikler">Artikler</a></li>
+</ul>
 </nav>
 
 <main>
-    <div class="breadcrumb">
-        <a href="index.html">Hjem</a> / <a href="index.html#leverandorer">Leverandører</a> / Jærkraft vs Cheap Energy
-    </div>
+<div class="breadcrumb">
+<a href="index.html">Wattguiden.no</a> &rsaquo; <a href="index.html#artikler">Artikler</a> &rsaquo; Jærkraft vs Cheap Energy
+</div>
 
-    <p class="meta-date">Publisert 3. april 2026 · Sist oppdatert 3. april 2026</p>
+<p class="meta-line">Publisert 6. april 2026 &middot; Oppdatert 6. april 2026 &middot; Av Wattguiden-redaksjonen</p>
 
-    <h1>Jærkraft vs Cheap Energy – <span>hvem er billigst?</span></h1>
+<h1>Jærkraft vs Cheap Energy &ndash; hvem er billigst i 2026?</h1>
 
-    <p class="intro">To av Norges mest prisbevisste strømleverandører kjemper om kundene med lave påslag og enkle avtaler. Men hvem kommer faktisk best ut når alt er regnet inn? Vi har sammenlignet Jærkraft og Cheap Energy på pris, vilkår og kundeopplevelse – slik at du kan ta et informert valg.</p>
+<p>To av de mest omtalte lavpris-aktørene i det norske strømmarkedet er <strong>Jærkraft</strong> og <strong>Cheap Energy</strong>. Begge markedsfører seg som rimelige alternativer til de større leverandørene som Fjordkraft, Hafslund og Tibber. Men hvem er egentlig billigst når alt er medregnet? Vi har sett på påslag, månedsavgifter, avtaletyper og skjulte kostnader slik at du kan ta et informert valg.</p>
 
-    <div class="factbox">
-        <div class="factbox-title">Nøkkelpunkter – Jærkraft vs Cheap Energy (april 2026)</div>
-        <ul>
-            <li>Cheap Energy har per april 2026 et månedlig påslag på 0,99 øre/kWh uten fastbeløp – blant de laveste i Norge.</li>
-            <li>Jærkraft opererer med spotpris pluss et påslag på 1,49 øre/kWh og en fast månedspris på 0 kr.</li>
-            <li>Begge leverandørene tilbyr strømavtaler uten bindingstid, men faktureringsmodellene er forskjellige.</li>
-            <li>Reell totalkostnad avhenger av forbruksmønster, prisområde og eventuelle kampanjepriser.</li>
-            <li>Begge leverer rendyrket spotprisavtale – ingen fastpris- eller variabelprismodell.</li>
-        </ul>
-    </div>
+<div class="factbox">
+<div class="factbox-title">⚡ Nøkkelpunkter &ndash; Jærkraft vs Cheap Energy</div>
+<ul>
+<li>Cheap Energy tilbyr ofte Norges laveste påslag på spotpris, helt ned mot 0 øre/kWh.</li>
+<li>Jærkraft har lave månedsavgifter og et stabilt påslag som sjelden endres.</li>
+<li>Begge er billigere enn gjennomsnittlig strømavtale i Norge per april 2026.</li>
+<li>Cheap Energy krever elektronisk faktura &ndash; papirfaktura koster ekstra.</li>
+<li>Jærkraft har sterkest fotfeste i Sør-Vestland, men leverer strøm i hele landet.</li>
+</ul>
+</div>
 
-    <h2>Bakgrunn: Hvorfor sammenligne akkurat disse to?</h2>
+<h2>Kort om de to leverandørene</h2>
 
-    <p>Strømmarkedet i Norge har de siste årene blitt mer oversiktlig for forbrukerne, men samtidig har konkurransen hardnet til blant leverandørene. Blant de aktørene som konsekvent havner øverst på listene over billigste strømleverandører, finner vi <strong>Jærkraft</strong> og <strong>Cheap Energy</strong>. Begge satser på en enkel forretningsmodell: spotpris med et minimalt påslag og ingen unødvendige tilleggstjenester.</p>
+<h3>Jærkraft &ndash; den lokale utfordreren</h3>
+<p>Jærkraft har røtter på Jæren i Rogaland og har over tid bygget seg opp som et solid alternativ for prisbevisste strømkunder over hele Norge. Selskapet tilbyr primært <strong>spotprisavtaler</strong> med et lavt, fast påslag per kilowattime. Jærkraft scorer høyt på kundetilfredshet i flere uavhengige undersøkelser, og kundene trekker ofte frem enkel fakturaforståelse og forutsigbare kostnader som positive sider.</p>
+<p>Per april 2026 opererer Jærkraft med et påslag på <span class="highlight">1,90 øre/kWh</span> og en månedsavgift på <span class="highlight">29 kr/mnd</span> på sin standard spotprisavtale. De tilbyr også en strømavtale uten månedsavgift, men da med et noe høyere påslag på 4,90 øre/kWh.</p>
 
-    <p>Der store aktører som <strong>Hafslund</strong>, <strong>Fjordkraft</strong> og <strong>Tibber</strong> bruker mye ressurser på apper, smarthus-integrasjoner og tilleggsprodukter, holder Jærkraft og Cheap Energy kostnadene nede ved å fokusere utelukkende på det som betyr mest for lommeboken: lavest mulig strømpris. Men selv blant budsjettleverandørene finnes det forskjeller som kan utgjøre flere hundre kroner i året.</p>
+<h3>Cheap Energy &ndash; lavpris-spesialisten</h3>
+<p>Cheap Energy har gjort seg bemerket som en av de mest aggressive lavpris-leverandørene i Norge. Selskapet opererer med svært lave driftskostnader og viderefører besparelsene til kundene. Deres mest populære avtale har et påslag på <span class="highlight">0,00 øre/kWh</span> over spotpris med en månedsavgift på <span class="highlight">49 kr/mnd</span>.</p>
+<p>Cheap Energy har også en alternativ avtale med 1,49 øre/kWh i påslag og 19 kr/mnd i fast avgift. All kommunikasjon og fakturering skjer digitalt, noe som holder kostnadene nede.</p>
 
-    <h2
+<h2>Prissammenligning &ndash; hva koster strømmen egentlig?</h2>
+
+<p>For å gjøre sammenligningen rettferdig, har vi beregnet totalkostnaden for en gjennomsnittlig norsk husholdning som bruker <strong>16 000 kWh per år</strong>. Vi tar utgangspunkt i spotpris og legger på påslag og månedsavgifter. Merk at selve spotprisen er lik uansett hvilken leverandør du velger &ndash; det er påslaget og faste avgifter som skiller dem.</p>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Leverandør</th>
+<th>Påslag (øre/kWh)</th>
+<th>Mnd.avgift</th>
+<th>Årlig merkostnad*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cheap Energy</strong> (Spot 0)</td>
+<td>0,00</td>
+<td>49 kr</td>
+<td>588 kr</td>
+</tr>
+<tr>
+<td><strong>Cheap Energy</strong> (Spot Lav)</td>
+<td>1,49</td>
+<td>19 kr</td>
+<td>466 kr</td>
+</tr>
+<tr>
+<td><strong>Jærkraft</strong> (Spot Standard)</td>
+<td>1,90</td>
+<td>29 kr</td>
+<td>652 kr</td>
+</tr>
+<tr>
+<td><strong>Jærkraft</strong> (Spot Uten mnd.avg.)</td>
+<td>4,90</td>
+<td>0 kr</td>
+<td>784 kr</td>
+</tr>
+<tr>
+<td><strong>Tibber</strong> (referanse)</td>
+<td>1,00</td>
+<td>49 kr</td>
+<td>748 kr</td>
+</tr>
+<tr>
+<td><strong>Fjordkraft</strong> (Spot enkel)</td>
+<td>3,90</td>
+<td>0 kr</td>
+<td>624 kr</td>
+</tr>
+<tr>
+<td><strong>NTE</strong> (Spot)</td>
+<td>2,90</td>
+<td>19 kr</td>
+<td>692 kr</td>
+</tr>
+<tr>
+<td><strong>Hafslund</strong> (Spot)</td>
+<td>2,49</td>
+<td>39 kr
