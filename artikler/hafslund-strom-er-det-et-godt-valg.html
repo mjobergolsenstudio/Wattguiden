@@ -1,0 +1,389 @@
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Er Hafslund strøm et godt valg i 2026? Vi sammenligner pris, vilkår og kundetilfredshet med Tibber, Fjordkraft og flere leverandører.">
+    <title>Hafslund strøm – er det et godt valg? | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem;
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem 4rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #8d97b0;
+            margin-bottom: 1.75rem;
+        }
+
+        .breadcrumb a {
+            color: #8d97b0;
+        }
+
+        .breadcrumb a:hover {
+            color: #e8b84b;
+        }
+
+        .meta-info {
+            font-size: 0.88rem;
+            color: #8d97b0;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: #f0f4fc;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.75rem;
+            margin-bottom: 0.85rem;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.6rem;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 1.15rem;
+            color: #f0f4fc;
+        }
+
+        .muted {
+            color: #8d97b0;
+        }
+
+        .faktaboks {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 1.75rem 1.75rem 1.25rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .faktaboks h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e8b84b;
+            margin-bottom: 0.85rem;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.97rem;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+        }
+
+        .card {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .pros-cons .card h3 {
+            margin-top: 0;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros-cons ul li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .pros-cons .pros ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        .pros-cons .cons ul li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #f87171;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        thead th {
+            background-color: #131720;
+            color: #e8b84b;
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+        }
+
+        tbody td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(232, 184, 75, 0.04);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #131720 0%, #1a1f2e 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 2.25rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.4rem;
+        }
+
+        .cta-box p {
+            color: #8d97b0;
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.9rem 2.25rem;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #f0c95e;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        footer p {
+            color: #8d97b0;
+            font-size: 0.85rem;
+        }
+
+        footer .disclaimer {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            thead th, tbody td {
+                padding: 0.6rem 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>Watt</span><span>guiden</span></div>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#leverandorer">Leverandører</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="breadcrumb">
+            <a href="index.html">Hjem</a> / <a href="index.html#leverandorer">Leverandører</a> / Hafslund strøm
+        </div>
+
+        <h1>Hafslund strøm – er det et godt valg i 2026?</h1>
+
+        <div class="meta-info">
+            Publisert 13. april 2026 · Oppdateres jevnlig · Av redaksjonen i Wattguiden
+        </div>
+
+        <p>
+            Hafslund er et av Norges mest kjente navn innen energi. Med røtter tilbake til 1898 og millioner av kunder i bagasjen gjennom årene, er det naturlig at mange nordmenn vurderer Hafslund når de skal velge strømleverandør. Men er Hafslund strøm faktisk et godt valg i 2026, eller finnes det bedre alternativer? Vi har sett nærmere på priser, avtaletyper, kundeservice og hvordan selskapet måler seg mot konkurrenter som <strong>Tibber</strong>, <strong>Fjordkraft</strong>, <strong>Cheap Energy</strong>, <strong>Jærkraft</strong> og <strong>NTE</strong>.
+        </p>
+
+        <div class="faktaboks">
+            <h3>Nøkkelpunkter om Hafslund strøm</h3>
+            <ul>
+                <li>Hafslund er en av Norges største strømleverandører med lang historie og solid merkevare.</li>
+                <li>Tilbyr spotpris, variabel pris og fastprisavtaler – med ulike påslag og månedsbeløp.</li>
+                <li>Kundetilfredsheten er middels i bransjeundersøkelser – ikke best, men heller ikke dårligst.</li>
+                <li>Appen og digitale løsninger har blitt vesentlig forbedret de siste årene, men ligger fortsatt bak Tibber på brukeropplevelse.</li>
+                <li>Bindingstid og tilleggskostnader varierer mellom avtaletypene – les alltid vilkårene nøye.</li>
+            </ul>
+        </div>
+
+        <h2>Hvem er Hafslund?</h2>
+
+        <p>
+            Hafslund har en over 125 år lang historie i norsk energibransje. Selskapet har gjennom årene vært involvert i alt fra kraftproduksjon og nettdrift til strømsalg. I dag er strømsalgsdelen det de fleste forbrukere kjenner til. Hafslund har gjennomgått flere omorganiseringer og eierskapsendringer, men merkevaren består som et av de mest gjenkjennelige navnene i bransjen.
+        </p>
+        <p>
+            For mange norske husholdninger er Hafslund nærmest synonymt med strøm. Det betyr likevel ikke at de automatisk tilbyr de beste vilkårene. Strømmarkedet i Norge er fullt konkurranseutsatt, og det lønner seg alltid å sammenligne flere leverandører før man binder seg til en avtale.
+        </p>
+
+        <h2>Hvilke strømavtaler tilbyr Hafslund?</h2>
+
+        <p>
+            Hafslund tilbyr i hovedsak tre typer strømavtaler til privatmarkedet. Hvilken som passer best avhenger av ditt forbruksmønster, risikovilje og hvor mye du ønsker å følge med på strømprisene.
+        </p>
+
+        <h3>Spotprisavtale</h3>
+        <p>
+            Med spotpris betaler du markedspris (Nord Pool-pris) time for time, pluss et påslag per kilowattime. I tillegg kommer gjerne et fast månedlig beløp. Dette er den avtaletypen som over tid gir lavest gjennomsnittspris for de fleste forbrukere, men den innebærer også at du er eksponert for prissvingninger. Hafslunds spotprisavtale er konkurransedyktig, men påslaget bør sammenlignes nøye med det du får hos <strong>Tibber</strong>, <strong>Cheap Energy</strong> og andre rene spotprisleverandører.
+        </p>
+
+        <h3>Variabel pris</h3>
+        <p>
+            En variabel prisavtale betyr at Hafslund setter prisen, og den kan justeres med 14 dagers varsel. Denne avtaletypen kan virke enkel, men erfaringsmessig ender mange forbrukere opp med å betale mer enn de ville gjort på spotpris. Fordelen er mer forutsigbarhet på kort sikt, men ulempen er at leverandøren har incentiv til å sette prisen noe høyere enn marke
