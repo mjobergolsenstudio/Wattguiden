@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Wattguiden — Hvem er vi og hva gjør vi?</title>
+<meta name="description" content="Wattguiden er en uavhengig norsk tjeneste som hjelper deg å spare penger på strøm. Les mer om hvem vi er, hva vi gjør og hvordan vi tjener penger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a08; --white: #f5f3ee; --off: #edeae2;
+  --border: #d0ccc2; --green: #1a7a3c; --gb: #22a854;
+  --gray: #6b6b60; --grayl: #f0ede6;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Syne', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--white); color: var(--black); font-family: var(--sans); font-size: 15px; line-height: 1.7; }
+
+nav { background: var(--black); padding: 0 36px; display: flex; align-items: center; border-bottom: 3px solid var(--gb); gap: 32px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 900; padding: 16px 0; color: #fff; flex: 1; text-decoration: none; }
+.nav-logo span { color: var(--gb); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: #888; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+
+.hero { background: var(--black); color: #fff; padding: 72px 36px; }
+.hero-inner { max-width: 760px; margin: 0 auto; }
+.eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gb); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+h1 { font-family: var(--serif); font-size: 56px; font-weight: 900; line-height: 1.05; margin-bottom: 16px; }
+.hero-lead { font-size: 18px; color: #aaa; line-height: 1.7; max-width: 560px; }
+
+.content { max-width: 760px; margin: 0 auto; padding: 64px 36px; }
+
+h2 { font-family: var(--serif); font-size: 28px; font-weight: 700; margin: 56px 0 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gb); }
+h2:first-child { margin-top: 0; }
+p { margin-bottom: 16px; color: #333; line-height: 1.8; }
+a { color: var(--green); }
+
+.mission-box {
+  background: var(--black); color: #fff;
+  border-radius: 12px; padding: 36px;
+  margin: 32px 0; position: relative; overflow: hidden;
+}
+.mission-box::before {
+  content: '"'; position: absolute; top: -20px; right: 20px;
+  font-family: var(--serif); font-size: 160px; color: rgba(34,168,84,0.1);
+  line-height: 1;
+}
+.mission-box p { color: #ccc; margin: 0; font-size: 17px; line-height: 1.8; }
+.mission-box strong { color: var(--gb); }
+
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+.team-card { background: var(--off); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+.team-name { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.team-title { font-family: var(--mono); font-size: 11px; color: var(--gb); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.team-bio { font-size: 13px; color: var(--gray); line-height: 1.7; }
+
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.value-item { padding: 20px; background: var(--grayl); border-radius: 8px; border-left: 3px solid var(--gb); }
+.value-icon { font-size: 24px; margin-bottom: 10px; }
+.value-title { font-weight: 700; margin-bottom: 6px; font-size: 14px; }
+.value-text { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+.money-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.money-table th { background: var(--black); color: #fff; padding: 12px 16px; text-align: left; font-size: 12px; font-family: var(--mono); }
+.money-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.money-table tr:nth-child(even) td { background: var(--grayl); }
+.money-table .yes { color: var(--green); font-weight: 700; }
+.money-table .no { color: #c0392b; }
+
+.stat-row { display: flex; gap: 32px; margin: 32px 0; flex-wrap: wrap; }
+.stat-item { flex: 1; min-width: 140px; text-align: center; padding: 24px; background: var(--off); border-radius: 10px; }
+.stat-num { font-family: var(--serif); font-size: 40px; font-weight: 900; color: var(--gb); }
+.stat-label { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; font-family: var(--mono); }
+
+.contact-card { background: var(--black); color: #fff; border-radius: 12px; padding: 32px; margin: 24px 0; display: flex; align-items: center; gap: 24px; }
+.contact-card-text h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 8px; }
+.contact-card-text p { color: #aaa; margin: 0; font-size: 14px; }
+.contact-card .btn { margin-left: auto; background: var(--gb); color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; white-space: nowrap; flex-shrink: 0; transition: background 0.2s; }
+.contact-card .btn:hover { background: var(--green); }
+
+footer { background: var(--black); color: #fff; padding: 32px 36px; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--gb); }
+.footer-logo { font-family: var(--serif); font-size: 18px; font-weight: 900; }
+.footer-logo span { color: var(--gb); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: #444; text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: #fff; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .hero { padding: 48px 16px; }
+  h1 { font-size: 36px; }
+  .content { padding: 40px 16px; }
+  .team-grid, .values-grid { grid-template-columns: 1fr; }
+  .stat-row { gap: 12px; }
+  footer { flex-direction: column; gap: 16px; text-align: center; }
+  .contact-card { flex-direction: column; }
+  .contact-card .btn { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Watt<span>guiden</span></a>
+  <div class="nav-links">
+    <a href="/">Hjem</a>
+    <a href="/leverandorer.html">Leverandører</a>
+    <a href="/artikler.html">Artikler</a>
+    <a href="/om-oss.html">Om oss</a>
+    <a href="/kontakt.html">Kontakt</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Om Wattguiden</div>
+    <h1>Vi hjelper nordmenn betale mindre for strøm</h1>
+    <p class="hero-lead">Wattguiden er en uavhengig norsk sammenlignings­tjeneste grunnlagt av folk som ble lei av å betale for mye for strøm – og ikke forstod hvorfor.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="mission-box">
+    <p>Vårt mål er enkelt: <strong>Gjøre det like enkelt å finne billig strøm som å bestille pizza.</strong> Strømbransjen er komplisert med vilje. Vi gjør den enkel.</p>
+  </div>
+
+  <h2>Vår historie</h2>
+  <p>Wattguiden ble startet i 2024 av et lite team med bakgrunn fra teknologi og energibransjen. Vi ble frustrerte over at norske forbrukere jevnlig betalte hundrevis av kroner for mye i måneden – rett og slett fordi det var vanskelig å sammenligne strømleverandører på en skikkelig måte.</p>
+  <p>De fleste sammenligningstjenester viser bare et utvalg av leverandører – de som betaler for å være med. Vi ønsket å lage noe annerledes: en tjeneste der du faktisk kan stole på at informasjonen er fullstendig og ærlig.</p>
+  <p>I dag hjelper vi tusenvis av norske husstander med å finne billigere strøm, forstå strømprisene og spare penger gjennom enkle grep i hverdagen.</p>
+
+  <div class="stat-row">
+    <div class="stat-item">
+      <div class="stat-num">70+</div>
+      <div class="stat-label">Leverandører testet</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3 000</div>
+      <div class="stat-label">Kr spart i snitt</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Uavhengig</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2024</div>
+      <div class="stat-label">Grunnlagt</div>
+    </div>
+  </div>
+
+  <h2>Hvem står bak?</h2>
+  <p>Wattguiden drives av Mjoberg Olsen Studio, et norsk selskap som bygger digitale verktøy for forbrukere. Vi er et lite team med stor lidenskap for å gjøre kompliserte bransjer enklere å navigere.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-name">Anders Mjoberg Olsen</div>
+      <div class="team-title">Grunnlegger & Redaktør</div>
+      <div class="team-bio">Bakgrunn fra teknologi og energibransjen. Startet Wattguiden etter å ha hjulpet familien spare over 4 000 kr i året på strøm ved å bytte leverandør.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Redaksjonen</div>
+      <div class="team-title">Innhold & Research</div>
+      <div class="team-bio">Alle artikler på Wattguiden skrives og kvalitetssikres av mennesker med fagkunnskap om energi, økonomi og forbrukerrettigheter i Norge.</div>
+    </div>
+  </div>
+
+  <h2>Våre verdier</h2>
+  <div class="values-grid">
+    <div class="value-item">
+      <div class="value-icon">🔍</div>
+      <div class="value-title">Uavhengighet</div>
+      <div class="value-text">Vi sammenligner alle leverandører – ikke bare de som betaler oss. Du ser hele markedet, ikke et utvalg.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">📖</div>
+      <div class="value-title">Ærlighet</div>
+      <div class="value-text">Vi er tydelige på hvordan vi tjener penger. Ingen skjulte agendaer. Det du ser er det du får.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">🇳🇴</div>
+      <div class="value-title">Norsk fokus</div>
+      <div class="value-text">Norske strømprisregler, norske leverandører, norske skatteregler. Vi er laget for det norske markedet.</div>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">⚡</div>
+      <div class="value-title">Enkelhet</div>
+      <div class="value-text">Strøm er komplisert nok fra før. Vi gjør det enkelt å forstå og enkelt å handle.</div>
+    </div>
+  </div>
+
+  <h2>Hvordan tjener vi penger?</h2>
+  <p>Vi er åpne om dette fordi vi mener du har krav på å vite det. Wattguiden tjener penger på to måter:</p>
+
+  <table class="money-table">
+    <thead>
+      <tr><th>Inntektskilde</th><th>Hva det betyr for deg</th><th>Påvirker rangeringen?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Affiliateprovisjoner</strong></td>
+        <td>Når du klikker til en leverandør og tegner avtale, mottar vi en provisjon fra leverandøren</td>
+        <td class="no">Nei – alle leverandører vises uavhengig</td>
+      </tr>
+      <tr>
+        <td><strong>Annonser</strong></td>
+        <td>Vi viser annonser fra Google AdSense på noen sider</td>
+        <td class="no">Nei – redaksjonelt innhold er adskilt</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Rangeringen av leverandører baseres utelukkende på pris, kundetilfredshet og avtalevilkår – aldri på hvem som betaler oss mest. Leverandører som ikke er tilknyttet affiliateprogrammer vises likevel i oversikten vår.</p>
+
+  <h2>Ansvarlig redaksjon</h2>
+  <p>Alle sammenligninger, artikler og kalkulatorer på Wattguiden gjennomgås jevnlig for å sikre at informasjonen er korrekt og oppdatert. Vi oppdaterer strømprisdata daglig fra offisielle kilder (Nordpool via hvakosterstrommen.no).</p>
+  <p>Finner du en feil, utdatert informasjon eller har innspill til innholdet vårt? Vi setter stor pris på tilbakemeldinger – det gjør tjenesten bedre for alle.</p>
+
+  <div class="contact-card">
+    <div class="contact-card-text">
+      <h3>Ta kontakt med oss</h3>
+      <p>Spørsmål, feil, samarbeid eller bare en hyggelig hilsen – vi svarer alltid.</p>
+    </div>
+    <a href="/kontakt.html" class="btn">Kontakt oss →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Watt<span>guiden</span></div>
+  <div class="footer-links">
+    <a href="/om-oss.html">Om oss</a>
+    <a href="/kontakt.html">Kontakt</a>
+    <a href="/personvern.html">Personvern</a>
+    <a href="/vilkar.html">Vilkår</a>
+  </div>
+</footer>
+
+</body>
+</html>
