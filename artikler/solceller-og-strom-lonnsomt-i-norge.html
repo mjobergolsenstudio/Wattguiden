@@ -1,0 +1,381 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Er solceller lønnsomt i Norge? Vi ser på kostnader, tilbakebetaling, strømpriser og hvordan du sparer mest med solceller på taket i 2026.">
+    <title>Solceller og strøm – lønnsomt i Norge? | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #8d97b0;
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: #8d97b0;
+        }
+
+        .breadcrumb a:hover {
+            color: #e8b84b;
+        }
+
+        .meta {
+            color: #8d97b0;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: #f0f4fc;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #f0f4fc;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: #f0f4fc;
+        }
+
+        .muted {
+            color: #8d97b0;
+        }
+
+        .faktaboks {
+            background: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 32px 0 40px;
+        }
+
+        .faktaboks h3 {
+            color: #e8b84b;
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding-left: 24px;
+            position: relative;
+            color: #f0f4fc;
+        }
+
+        .faktaboks ul li:last-child {
+            border-bottom: none;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+        }
+
+        ul.normal-list {
+            padding-left: 20px;
+            margin-bottom: 18px;
+        }
+
+        ul.normal-list li {
+            margin-bottom: 8px;
+            color: #f0f4fc;
+        }
+
+        .card {
+            background: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #131720;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead th {
+            background: #1a1f2e;
+            text-align: left;
+            padding: 14px 16px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: #e8b84b;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            font-size: 0.95rem;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 2px solid #e8b84b;
+            border-radius: 14px;
+            padding: 40px 36px;
+            text-align: center;
+            margin: 56px 0 32px;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: #8d97b0;
+            max-width: 540px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 14px 36px;
+            border-radius: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: #f5c95f;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 32px 20px;
+            text-align: center;
+            color: #8d97b0;
+            font-size: 0.85rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        footer .disclaimer {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #6b7490;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .faktaboks, .card, .cta-box {
+                padding: 20px 18px;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>Watt</span><span>guiden</span></div>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#leverandorer">Leverandører</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Hjem</a> / <span>Solceller og strøm</span>
+        </div>
+
+        <h1>Solceller og strøm – lønnsomt i Norge?</h1>
+        <p class="meta">Publisert 4. mai 2026 · Oppdatert av redaksjonen i Wattguiden</p>
+
+        <p>Stadig flere norske huseiere vurderer solceller på taket. Med høye strømpriser, bedre teknologi og gunstige støtteordninger har solenergi blitt et realistisk alternativ – også i et land kjent for mørke vintre. Men er solceller virkelig lønnsomt i Norge? I denne guiden går vi gjennom alt du trenger å vite: kostnader, tilbakebetaling, strømavtaler og hvordan du kombinerer solceller med den beste strømavtalen for å spare mest mulig.</p>
+
+        <div class="faktaboks">
+            <h3>Faktaboks – Solceller i Norge 2026</h3>
+            <ul>
+                <li>Et typisk solcelleanlegg på 10 kWp koster mellom 120 000 og 180 000 kroner ferdig installert.</li>
+                <li>Enova gir inntil 47 500 kroner i støtte til solcelleanlegg for privatpersoner.</li>
+                <li>Tilbakebetalingstiden ligger normalt mellom 8 og 14 år, avhengig av strømpris og beliggenhet.</li>
+                <li>Sør-Norge får rundt 800–1 000 kWh per installert kWp årlig, Nord-Norge noe mindre – men med lange sommerdager.</li>
+                <li>Overskuddskraft kan selges tilbake til nettet gjennom en plusskundeordning hos din strømleverandør.</li>
+            </ul>
+        </div>
+
+        <h2>Hva koster solceller i Norge i 2026?</h2>
+
+        <p>Prisen på solceller har falt kraftig det siste tiåret. I 2026 kan du forvente å betale mellom 12 000 og 18 000 kroner per installert kWp (kilowatt-peak), inkludert montering, vekselretter og nødvendig utstyr. For en gjennomsnittlig enebolig med et anlegg på 8–12 kWp betyr det en totalkostnad på 100 000 til 200 000 kroner.</p>
+
+        <p>Etter Enova-støtten på inntil 47 500 kroner reduseres investeringen betraktelig. Noen kommuner tilbyr i tillegg lokale tilskudd, så det lønner seg å sjekke hva som er tilgjengelig i din kommune.</p>
+
+        <h3>Priseksempel for en typisk enebolig</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Post</th>
+                    <th>Beløp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Solcelleanlegg 10 kWp (inkl. montering)</td>
+                    <td>155 000 kr</td>
+                </tr>
+                <tr>
+                    <td>Enova-støtte</td>
+                    <td>– 47 500 kr</td>
+                </tr>
+                <tr>
+                    <td>Nettokostnad</td>
+                    <td><strong>107 500 kr</strong></td>
+                </tr>
+                <tr>
+                    <td>Estimert årlig besparelse (Sør-Norge)</td>
+                    <td>10 000 – 14 000 kr</td>
+                </tr>
+                <tr>
+                    <td>Tilbakebetalingstid</td>
+                    <td>8–11 år</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Hvor mye strøm produserer solceller i Norge?</h2>
+
+        <p>Norge er kanskje ikke det første landet du tenker på når det gjelder solenergi, men realiteten er at store deler av Sør-Norge har like mange solskinnstimer som Nord-Tyskland – et av verdens ledende solcellemarkeder. Et anlegg på 10 kWp i Oslo-området produserer typisk 8 000–10 000 kWh per år, noe som tilsvarer 40–60 % av årsforbruket til en gjennomsnittlig husholdning.</p>
+
+        <p>Produksjonen varierer naturligvis gjennom året. Fra april til september genererer anlegget mesteparten av strømmen, mens vintermånedene bidrar minimalt. Dette betyr at du i sommerhalvåret ofte vil ha overskuddsstrøm som kan selges tilbake til nettet, mens du om vinteren fortsatt er avhengig av strøm fra leverandøren din.</p>
+
+        <h3>Plusskundeordningen – selg overskuddsstrøm</h3>
+
+        <p>Som plusskunde kan du mate overskuddskraft tilbake til strømnettet og få betalt for det. De fleste norske strømleverandører tilbyr dette i dag. <strong>Tibber</strong> er kjent for sin timebaserte spotprismodell som automatisk optimaliserer salg av overskuddsstrøm til de dyreste timene via sin app. <strong>Hafslund</strong> tilbyr også en smidig plusskundeløsning som er populær blant solcelleeiere i østlandsområdet.</p>
+
+        <p>Det er viktig å merke seg at prisen du får for overskuddsstrøm vanligvis er lavere enn det du betaler
