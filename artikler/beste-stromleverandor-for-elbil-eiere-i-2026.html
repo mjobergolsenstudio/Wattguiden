@@ -1,0 +1,402 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Finn beste strømleverandør for elbil-eiere i 2026. Vi sammenligner Tibber, Cheap Energy, Fjordkraft, Jærkraft, NTE og Hafslund for smart elbillading.">
+    <title>Beste strømleverandør for elbil-eiere i 2026 | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.82;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        .meta-date {
+            color: #8d97b0;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: #e8b84b;
+        }
+
+        .intro {
+            font-size: 18px;
+            color: #8d97b0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 18px;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        .factbox {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 32px 0 44px;
+        }
+
+        .factbox h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e8b84b;
+            margin-bottom: 16px;
+        }
+
+        .factbox ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .factbox ul li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            color: #f0f4fc;
+            font-size: 15.5px;
+        }
+
+        .factbox ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .provider-card {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+        }
+
+        .provider-card h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+        }
+
+        .provider-card p {
+            color: #8d97b0;
+            font-size: 15.5px;
+            margin-bottom: 0;
+        }
+
+        .provider-card .highlight {
+            color: #f0f4fc;
+            font-weight: 600;
+        }
+
+        ul.pros-list {
+            list-style: none;
+            padding: 0;
+            margin: 14px 0 0;
+        }
+
+        ul.pros-list li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 6px;
+            font-size: 15px;
+            color: #f0f4fc;
+        }
+
+        ul.pros-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e8b84b;
+            font-weight: 700;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0 36px;
+            font-size: 15px;
+        }
+
+        .comparison-table thead th {
+            background-color: #131720;
+            color: #e8b84b;
+            font-weight: 700;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .comparison-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            color: #f0f4fc;
+        }
+
+        .comparison-table tbody tr:hover {
+            background-color: rgba(232, 184, 75, 0.04);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 40px 36px;
+            text-align: center;
+            margin: 56px 0 20px;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: #8d97b0;
+            max-width: 520px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 16px 40px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232, 184, 75, 0.25);
+            opacity: 1;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        footer .footer-logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        footer .footer-logo span:last-child {
+            color: #e8b84b;
+        }
+
+        footer p {
+            color: #8d97b0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        footer .disclaimer {
+            font-size: 12px;
+            color: #8d97b0;
+            margin-top: 16px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .factbox, .provider-card, .cta-box {
+                padding: 22px 20px;
+            }
+
+            nav ul {
+                gap: 16px;
+            }
+
+            .comparison-table {
+                font-size: 13px;
+            }
+
+            .comparison-table thead th,
+            .comparison-table tbody td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><span>Watt</span><span>guiden</span></div>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#guider">Guider</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="meta-date">Publisert 11. mai 2026 · Oppdatert mai 2026</p>
+
+        <h1>Beste strømleverandør for <span>elbil-eiere</span> i 2026</h1>
+
+        <p class="intro">
+            Norge har over 900 000 registrerte elbiler, og strømregningen for lading utgjør en stadig større del av husholdningsbudsjettet. Riktig strømavtale kan spare deg for flere tusen kroner i året – spesielt hvis du lader hjemme om natten. Vi har sammenlignet de mest relevante leverandørene for elbil-eiere i 2026.
+        </p>
+
+        <div class="factbox">
+            <h3>Nøkkelpunkter – strøm og elbil i 2026</h3>
+            <ul>
+                <li>Gjennomsnittlig elbil bruker 2 000–3 500 kWh per år ved hjemmelading</li>
+                <li>Timespotavtaler med smart styring kan redusere ladekostnaden med 20–35 %</li>
+                <li>Flere leverandører tilbyr nå dedikerte elbil-tilleggstjenester og ladeplaner</li>
+                <li>Nettleie med kapasitetsledd gjør det lønnsomt å spre ladingen over tid</li>
+                <li>Automatisk ladestyring krever kompatibel lader og app-integrasjon</li>
+            </ul>
+        </div>
+
+        <h2>Hvorfor strømavtalen betyr mer for elbil-eiere</h2>
+
+        <p>
+            En typisk norsk husholdning bruker rundt 16 000 kWh i året. Legger du til hjemmelading av elbilen, kan forbruket øke med 15–25 prosent. Det betyr at forskjellen mellom en god og en dårlig strømavtale blir langt mer merkbar enn for husstander uten elbil. Med dagens nettleiemodell, der du betaler ekstra for høy effektbruk i enkelttimer, blir det dessuten avgjørende å lade smart – ikke bare billig.
+        </p>
+
+        <p>
+            Den ideelle strømavtalen for en elbil-eier i 2026 kombinerer lave spotpriser med intelligent ladestyring. Flere av leverandørene vi har vurdert tilbyr apper som automatisk flytter ladingen til de billigste timene i løpet av natten, noe som både reduserer strømkostnaden og holder nettleien nede.
+        </p>
+
+        <h2>De beste strømleverandørene for elbil-eiere i 2026</h2>
+
+        <p>
+            Vi har vurdert seks leverandører som skiller seg ut for elbil-eiere, basert på pris, smart funksjonalitet, kundetilfredshet og spesialtilbud knyttet til lading.
+        </p>
+
+        <div class="provider-card">
+            <h3>1. Tibber – Best på smart ladestyring</h3>
+            <p>
+                Tibber er fortsatt den mest populære leverandøren blant teknologibevisste elbil-eiere i 2026. Appen styrer automatisk ladingen til de billigste spotpristimene, og integrasjonen med de fleste store ladeboksmerker (Easee, Zaptec, Wallbox) er sømløs. Du betaler spotpris uten påslag, kun et fast månedlig gebyr på 49 kroner. Tibbers «Smart Charging»-funksjon tar hensyn til både strømpris og nettleiens kapasitetsledd, slik at du unngår effekttopper.
+            </p>
+            <ul class="pros-list">
+                <li>Automatisk ladestyring basert på spotpris og nettleie</li>
+                <li>Spotpris uten påslag – kun 49 kr/mnd</li>
+                <li>Bred kompatibilitet med ladebokser og smarthjemløsninger</li>
+            </ul>
+        </div>
+
+        <div class="provider-card">
+            <h3>2. Cheap Energy – Lavest mulig pris</h3>
+            <p>
+                Cheap Energy har gjort seg bemerket med en ekstremt slank prismodell. De tilbyr spotpris med et lite påslag på 0,9 øre/kWh og ingen månedsgebyr. For elbil-eiere som allerede har en smart ladeboks med egen tidsstyring, kan Cheap Energy gi den absolutt laveste totalkostnaden
