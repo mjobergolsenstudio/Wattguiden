@@ -1,0 +1,415 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Lær hvordan du leser strømregningen riktig. Komplett guide til alle poster, avgifter og tips for å spare penger på strøm i 2026.">
+    <title>Slik leser du strømregningen – komplett guide | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.82;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 26px;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+        }
+
+        .breadcrumb {
+            color: #8d97b0;
+            font-size: 0.88rem;
+            margin-bottom: 28px;
+        }
+
+        .breadcrumb a {
+            color: #8d97b0;
+        }
+
+        .breadcrumb a:hover {
+            color: #e8b84b;
+        }
+
+        .meta-info {
+            color: #8d97b0;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: #f0f4fc;
+        }
+
+        .intro-text {
+            font-size: 1.12rem;
+            color: #8d97b0;
+            margin-bottom: 36px;
+            line-height: 1.75;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        .fact-box {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin: 32px 0 40px;
+        }
+
+        .fact-box h3 {
+            color: #e8b84b;
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 1.15rem;
+        }
+
+        .fact-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fact-box ul li {
+            padding: 7px 0;
+            padding-left: 26px;
+            position: relative;
+            color: #f0f4fc;
+            font-size: 0.98rem;
+        }
+
+        .fact-box ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 7px;
+        }
+
+        .card-section {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 30px 32px;
+            margin: 30px 0;
+        }
+
+        .card-section h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.95rem;
+        }
+
+        thead th {
+            text-align: left;
+            padding: 12px 14px;
+            background-color: #131720;
+            color: #e8b84b;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.07);
+        }
+
+        tbody td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            color: #f0f4fc;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(232,184,75,0.04);
+        }
+
+        ul.content-list, ol.content-list {
+            margin: 16px 0 22px 22px;
+        }
+
+        ul.content-list li, ol.content-list li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #e8b84b;
+            font-weight: 600;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 14px;
+            padding: 40px 36px;
+            text-align: center;
+            margin: 52px 0 20px;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: #8d97b0;
+            font-size: 1.05rem;
+            max-width: 540px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 15px 38px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232,184,75,0.25);
+            opacity: 1;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .footer-logo span:last-child {
+            color: #e8b84b;
+        }
+
+        .footer-disclaimer {
+            color: #8d97b0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-width: 560px;
+            margin: 12px auto 0;
+        }
+
+        .footer-copy {
+            color: #8d97b0;
+            font-size: 0.82rem;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                gap: 16px;
+            }
+
+            .card-section {
+                padding: 22px 18px;
+            }
+
+            .fact-box {
+                padding: 22px 18px;
+            }
+
+            .cta-box {
+                padding: 30px 22px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            thead th, tbody td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>Watt</span><span>guiden</span></div>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html#sammenlign">Sammenlign</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Hjem</a> / <a href="index.html#guider">Guider</a> / Slik leser du strømregningen
+        </div>
+
+        <p class="meta-info">Oppdatert 18. mai 2026 · 9 min lesetid</p>
+
+        <h1>Slik leser du strømregningen – komplett guide for 2026</h1>
+
+        <p class="intro-text">
+            Strømregningen er et dokument de fleste av oss bare skanner raskt før vi betaler. Men visste du at mange nordmenn betaler mer enn nødvendig fordi de ikke forstår hva de faktisk betaler for? I denne guiden forklarer vi hver eneste post på regningen, avslører skjulte kostnader og gir deg konkrete tips til hvordan du kan kutte strømutgiftene.
+        </p>
+
+        <div class="fact-box">
+            <h3>5 ting du må vite om strømregningen</h3>
+            <ul>
+                <li>Du mottar normalt <strong>to separate fakturaer</strong> – én fra strømleverandøren og én fra nettselskapet.</li>
+                <li>Nettleien utgjør ofte <strong>30–50 % av totalkostnaden</strong> og er lik uansett leverandør.</li>
+                <li>Offentlige avgifter som elavgift og Enova-avgift står oppført som egne poster.</li>
+                <li>Spotprisavtaler fra f.eks. Tibber eller Cheap Energy viser faktisk timespris – sjekk mot Nord Pool.</li>
+                <li>Du kan klage på feil i regningen opp til <strong>tre år tilbake</strong> i henhold til foreldelsesloven.</li>
+            </ul>
+        </div>
+
+        <h2>Hvorfor får du to regninger?</h2>
+
+        <p>
+            Det norske strømmarkedet er delt i to: <strong>strømleverandør</strong> og <strong>nettselskap</strong>. Strømleverandøren selger deg selve strømmen, mens nettselskapet eier og drifter linjene som frakter strømmen til boligen din. Nettselskapet i ditt område er et monopol – du kan ikke bytte – men strømleverandør kan du fritt velge mellom tilbydere som <strong>Tibber</strong>, <strong>Fjordkraft</strong>, <strong>Hafslund</strong>, <strong>Jærkraft</strong>, <strong>NTE</strong> og <strong>Cheap Energy</strong>.
+        </p>
+
+        <p>
+            Noen leverandører tilbyr «samlet faktura», der begge beløpene slås sammen til én regning. Hafslund og Fjordkraft er blant aktørene som gjør dette i flere nettområder. Uansett om du får én eller to regninger, er det de samme postene du betaler for – de er bare organisert forskjellig.
+        </p>
+
+        <h2>Postene på strømregningen forklart</h2>
+
+        <p>
+            La oss gå gjennom de vanligste linjene du finner på regningen. Vi deler dem inn i de to hovedkategoriene: strømleverandørens faktura og nettleiefakturaen.
+        </p>
+
+        <h3>Strømleverandørens faktura</h3>
+
+        <p>
+            Denne fakturaen dekker selve kraftprisen – altså det du betaler for strømmen som energiprodukt. Her er de vanligste postene:
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Post</th>
+                    <th>Forklaring</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kraftpris (kWh)</strong></td>
+                    <td>Selve strømprisen per kilowattime. Ved spotprisavtale (f.eks. hos Tibber eller Cheap Energy) varierer denne time for time basert på Nord Pool-børsen.</td>
+                </tr>
+                <tr>
+                    <td><strong>Påslag / margin</strong></td>
+                    <td>Leverandørens fortjeneste, oppgitt i øre/kWh. Varierer typisk fra 0 til 5 øre. Cheap Energy og Tibber opererer ofte med svært lave påslag.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fastbeløp / månedsgebyr</strong></td>
+                    <td>Et fast kronebeløp per måned uavhengig av forbruk. Noen leverandører, som Tibber, tar 49 kr/mnd i abonnement i stedet for påslag.</td>
+                </tr>
