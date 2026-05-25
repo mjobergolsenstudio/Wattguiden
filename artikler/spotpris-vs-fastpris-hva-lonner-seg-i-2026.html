@@ -1,0 +1,383 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Spotpris vs fastpris på strøm i 2026 – vi sammenligner fordeler, ulemper og kostnader. Finn ut hva som lønner seg for din husholdning med vår guide.">
+    <title>Spotpris vs fastpris – hva lønner seg i 2026? | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.82;
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem;
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem 4rem;
+        }
+
+        .meta-line {
+            color: #8d97b0;
+            font-size: 0.88rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.22;
+            margin-bottom: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: #e8b84b;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #c0c8dc;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.75rem;
+            margin-bottom: 0.85rem;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.18rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 1.15rem;
+            color: #d0d6e8;
+        }
+
+        .faktaboks {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 1.75rem 1.75rem 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .faktaboks h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+            color: #e8b84b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: #d0d6e8;
+            font-size: 0.97rem;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .card {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        thead th {
+            background-color: #1a1f2e;
+            color: #e8b84b;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.85rem 1rem;
+            border-bottom: 2px solid rgba(255,255,255,0.07);
+        }
+
+        tbody td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            color: #d0d6e8;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(232,184,75,0.04);
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.65rem;
+            }
+            nav ul {
+                gap: 0.75rem;
+            }
+        }
+
+        .pros-cons .card {
+            margin-bottom: 0;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros-cons ul li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #d0d6e8;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 2.25rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.4rem;
+        }
+
+        .cta-box p {
+            color: #c0c8dc;
+            max-width: 520px;
+            margin: 0.5rem auto 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.9rem 2.25rem;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(232,184,75,0.25);
+            text-decoration: none;
+            opacity: 1;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            text-align: center;
+            padding: 2rem 1.25rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            color: #8d97b0;
+            font-size: 0.82rem;
+        }
+
+        footer .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        footer .footer-logo span:last-child {
+            color: #e8b84b;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>Watt</span><span>guiden</span></div>
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#kalkulator">Kalkulator</a></li>
+        <li><a href="index.html#leverandorer">Leverandører</a></li>
+    </ul>
+</nav>
+
+<main>
+    <p class="meta-line">Publisert 25. mai 2026 · Sist oppdatert 25. mai 2026 · 8 min lesetid</p>
+
+    <h1>Spotpris vs fastpris – <span>hva lønner seg i 2026?</span></h1>
+
+    <p class="intro">Strømmarkedet er i stadig endring, og valget mellom spotpris og fastpris har aldri vært mer aktuelt. Med nye kabelforbindelser, økt fornybar produksjon og et mer volatilt europeisk energimarked, er det viktig å forstå hva som faktisk gir deg den laveste strømregningen. I denne guiden bryter vi ned begge alternativene med ferske tall, sammenligner konkrete leverandører og hjelper deg å ta riktig valg for akkurat din husholdning.</p>
+
+    <div class="faktaboks">
+        <h3>Nøkkelpunkter – spotpris vs fastpris 2026</h3>
+        <ul>
+            <li>Spotpris har historisk sett vært 10–25 % billigere enn fastpris over tid, men innebærer prissvingninger.</li>
+            <li>Fastprisavtaler i 2026 ligger typisk mellom 65 og 95 øre/kWh avhengig av bindingstid og prisområde.</li>
+            <li>Gjennomsnittlig spotpris hittil i 2026 (NO1–NO5) har variert mellom 38 og 72 øre/kWh.</li>
+            <li>Strømstøtteordningen gjelder fortsatt for priser over 73 øre/kWh, noe som reduserer den reelle risikoen ved spotpris.</li>
+            <li>Leverandører som Tibber, Cheap Energy og Jærkraft tilbyr blant markedets laveste spotpris-påslag i mai 2026.</li>
+        </ul>
+    </div>
+
+    <h2>Hva er egentlig spotpris og fastpris?</h2>
+
+    <p>Før vi dykker ned i tallene, er det viktig å forstå hva som skiller de to modellene. <strong>Spotpris</strong> betyr at du betaler den faktiske markedsprisen for strøm, time for time, slik den settes på kraftbørsen Nord Pool. På toppen av dette kommer et lite påslag fra leverandøren din – typisk mellom 0 og 5 øre/kWh – pluss et månedlig fastbeløp.</p>
+
+    <p><strong>Fastpris</strong> betyr at du inngår en avtale om en fast kilowattimepris over en bestemt periode, vanligvis 6, 12 eller 36 måneder. Du vet nøyaktig hva du betaler per kWh uansett hva markedet gjør. Ulempen er at leverandøren legger inn en risikopremie – de må sikre seg mot tap dersom markedsprisen stiger – og denne premien gjør at fastpris nesten alltid er høyere enn den forventede gjennomsnittlige spotprisen.</p>
+
+    <h3>Hvordan settes spotprisen?</h3>
+
+    <p>Spotprisen påvirkes av en rekke faktorer: nedbørsmengde og magasinfylling i norske vannkraftverk, vindkraftproduksjon i Norden, temperatur og etterspørsel, samt pris på gass og CO₂-kvoter i Europa. I 2026 har vi sett at økt utbygging av havvind i Nordsjøen og god magasinfylling gjennom vinteren har bidratt til å holde prisene relativt moderate sammenlignet med toppårene 2022–2023.</p>
+
+    <h2>Prisutviklingen i 2026 – hva tallene viser</h2>
+
+    <p>For å gi et rettferdig bilde har vi samlet gjennomsnittlige spotpriser per prisområde for de første fem månedene av 2026, og sammenlignet med typiske fastprisavtaler som har vært tilgjengelige i samme periode.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Prisområde</th>
+                <th>Gj.snitt spot (øre/kWh)</th>
+                <th>Typisk fastpris (øre/kWh)</th>
+                <th>Differanse</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NO1 (Østlandet)</td>
+                <td>68</td>
+                <td>89</td>
+                <td>+21 øre</td>
+            </tr>
+            <tr>
+                <td>NO2 (Sørlandet)</td>
+                <td>72</td>
+                <td>95</td>
+                <td>+23 øre</td>
+            </tr>
+            <tr>
+                <td>NO3 (Midt-Norge)</td>
+                <td>45</td>
+                <td>68</td>
+                <td>+23 øre</td>
+            </tr>
+            <tr>
+                <td>NO4 (Nord-Norge)
