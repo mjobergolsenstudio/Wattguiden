@@ -1,0 +1,351 @@
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Lær hvordan du sparer mest med varmepumpe og riktig strømavtale. Konkrete tips, beregninger og leverandørsammenligninger fra Wattguiden.no.">
+    <title>Varmepumpe og strøm – slik sparer du mest | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+        }
+
+        .meta-line {
+            color: #8d97b0;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .intro {
+            font-size: 1.12rem;
+            color: #8d97b0;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        .faktaboks {
+            background: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin: 32px 0 40px;
+        }
+
+        .faktaboks h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e8b84b;
+            margin-bottom: 14px;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+            color: #f0f4fc;
+            font-size: 1rem;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+        }
+
+        ul, ol {
+            margin-bottom: 18px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tip-card {
+            background: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+
+        .tip-card h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px;
+            font-size: 0.97rem;
+        }
+
+        thead th {
+            background: #131720;
+            color: #e8b84b;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.07);
+        }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        tbody tr:hover {
+            background: rgba(232,184,75,0.04);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #131720, #1a1f2e);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 36px 32px;
+            text-align: center;
+            margin: 56px 0 20px;
+        }
+
+        .cta-box h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.4rem;
+        }
+
+        .cta-box p {
+            color: #8d97b0;
+            max-width: 520px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 14px 36px;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            opacity: 0.88;
+            text-decoration: none;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            text-align: center;
+            color: #8d97b0;
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        footer .logo-footer {
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        footer .logo-footer span:first-child {
+            color: #f0f4fc;
+        }
+
+        footer .logo-footer span:last-child {
+            color: #e8b84b;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            .faktaboks {
+                padding: 20px 18px;
+            }
+
+            .cta-box {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>Watt</span><span>guiden</span></div>
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#kalkulator">Kalkulator</a></li>
+        <li><a href="index.html#leverandorer">Leverandører</a></li>
+    </ul>
+</nav>
+
+<main>
+    <p class="meta-line">Publisert 8. juni 2026 · Oppdatert 8. juni 2026 · 7 min lesetid</p>
+
+    <h1>Varmepumpe og strøm – slik sparer du mest</h1>
+
+    <p class="intro">En varmepumpe kan kutte strømregningen din med 30–60 %, men bare dersom du velger riktig type, riktig strømavtale og bruker den smart. I denne guiden går vi gjennom alt du trenger å vite for å hente ut maksimal besparelse – fra valg av varmepumpe til hvilken leverandør som gir deg best pris per kilowattime.</p>
+
+    <div class="faktaboks">
+        <h3>Nøkkelpunkter – varmepumpe og strøm</h3>
+        <ul>
+            <li>En luft-til-luft-varmepumpe koster 15 000–30 000 kr installert og sparer typisk 5 000–12 000 kr/år</li>
+            <li>Varmepumpen leverer 2–5 kWh varme for hver kWh strøm den bruker (COP-verdi)</li>
+            <li>Spotprisavtale i kombinasjon med varmepumpe gir størst besparelse for de fleste</li>
+            <li>Smarte leverandører som Tibber og Cheap Energy lar deg styre varmepumpen etter strømpris automatisk</li>
+            <li>Bergvarme (væske-til-vann) gir høyest besparelse, men krever investering på 150 000–250 000 kr</li>
+        </ul>
+    </div>
+
+    <h2>Hvorfor varmepumpe er det smarteste strømtiltaket du kan gjøre</h2>
+
+    <p>Oppvarming utgjør omtrent 60 % av strømforbruket i en gjennomsnittlig norsk bolig. Det betyr at tiltak som reduserer varmebehovet – eller gjør oppvarmingen mer effektiv – har enorm innvirkning på den totale strømregningen. Det er nettopp her varmepumpen kommer inn.</p>
+
+    <p>En varmepumpe fungerer ved å hente gratisenergi fra uteluften, bakken eller bergrunnen, og flytte denne varmen inn i boligen. For hver kilowattime strøm varmepumpen bruker, leverer den typisk mellom 2 og 5 kilowattimer varme tilbake. Denne forholdsverdien kalles COP (Coefficient of Performance), og er nøkkelen til hvorfor varmepumper er så lønnsomme.</p>
+
+    <p>La oss si at du i dag bruker 20 000 kWh i året, der 12 000 kWh går til oppvarming. Med en varmepumpe som har en gjennomsnittlig sesong-COP på 3, trenger du bare 4 000 kWh strøm for å dekke det samme varmebehovet. Du sparer altså 8 000 kWh – noe som ved en strømpris på 1,50 kr/kWh utgjør hele 12 000 kroner i året.</p>
+
+    <h2>Hvilken type varmepumpe passer for deg?</h2>
+
+    <h3>Luft-til-luft – det rimeligste alternativet</h3>
+
+    <p>Luft-til-luft er den klart mest populære varmepumpetypen i Norge. Den henter varme fra uteluften og blåser varm luft direkte inn i rommet. Investeringskostnaden ligger typisk mellom 15 000 og 30 000 kroner ferdig installert, og den egner seg spesielt godt i boliger med åpen planløsning der varmen kan fordele seg naturlig mellom rommene.</p>
+
+    <p>Ulempen er at effektiviteten synker når det blir skikkelig kaldt ute. De beste modellene i 2026 klarer likevel å levere varme helt ned til minus 25 grader, men COP-verdien vil da være vesentlig lavere enn på mildere dager.</p>
+
+    <h3>Luft-til-vann – for vannbåren varme</h3>
+
+    <p>Har du vannbåren varme i gulvet eller radiatorer, er luft-til-vann et godt alternativ. Denne typen koster mer – gjerne 80 000–150 000 kroner installert – men varmer opp hele huset jevnt og kan også produsere varmtvann. Investeringen kan lønne seg godt i større boliger med høyt varmebehov.</p>
+
+    <h3>Bergvarme (væske-til-vann) – kongen av effektivitet</h3>
+
+    <p>Bergvarme henter energi fra dype brønnhull i bakken, der temperaturen er stabil hele året. Det gir en sesong-COP på 4–5, altså vesentlig bedre enn luft-baserte alternativer. Prislappen ligger gjerne på 150 000–250 000 kroner inkludert boring, men for store eneboliger med høyt forbruk kan nedbetalingstiden likevel være under 7–8 år.</p>
+
+    <h2>Slik velger du riktig strømavtale til varmepumpen</h2>
+
+    <p>En varmepumpe øker den totale mengden strøm du kjøper, selv om den reduserer den totale mengden energi du bruker til oppvarming. Derfor blir valg av strømavtale ekstra viktig. Her er de mest aktuelle avtaletypene:</p>
+
+    <h3>Spotprisavtale – best for de fleste</h3>
+
+    <p>Med spotpris betaler du markedspris time for time, pluss et lite påslag fra leverandøren. Historisk har spot vært det rimeligste alternativet over tid, og med en varmepumpe har du en unik fordel: du kan la pumpen jobbe hardere når strømmen er billig, og ta det roligere i de dyreste timene.</p>
+
+    <p>Leverandører som <strong>Tibber</strong> og <strong>Cheap Energy</strong> til
