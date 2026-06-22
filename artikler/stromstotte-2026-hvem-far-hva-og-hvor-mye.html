@@ -1,0 +1,363 @@
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Strømstøtte 2026: Få oversikt over hvem som kvalifiserer, hvor mye du kan få, og hvordan ordningen fungerer. Oppdatert guide fra Wattguiden.no.">
+<title>Strømstøtte 2026 – hvem får hva og hvor mye? | Wattguiden.no</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+background-color: #0b0f17;
+color: #f0f4fc;
+line-height: 1.75;
+font-size: 17px;
+}
+a {
+color: #e8b84b;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+max-width: 900px;
+margin: 0 auto;
+padding: 24px 20px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.logo {
+font-size: 1.5rem;
+font-weight: 800;
+letter-spacing: -0.5px;
+}
+.logo span:first-child {
+color: #f0f4fc;
+}
+.logo span:last-child {
+color: #e8b84b;
+}
+nav ul {
+list-style: none;
+display: flex;
+gap: 24px;
+}
+nav ul li a {
+color: #8d97b0;
+font-size: 0.95rem;
+font-weight: 500;
+}
+nav ul li a:hover {
+color: #e8b84b;
+text-decoration: none;
+}
+main {
+max-width: 760px;
+margin: 0 auto;
+padding: 48px 20px 80px;
+}
+.meta-line {
+color: #8d97b0;
+font-size: 0.9rem;
+margin-bottom: 12px;
+}
+h1 {
+font-size: 2.3rem;
+font-weight: 800;
+line-height: 1.2;
+margin-bottom: 20px;
+letter-spacing: -0.5px;
+}
+h2 {
+font-size: 1.5rem;
+font-weight: 700;
+margin-top: 48px;
+margin-bottom: 16px;
+color: #f0f4fc;
+letter-spacing: -0.3px;
+}
+h3 {
+font-size: 1.15rem;
+font-weight: 600;
+margin-top: 32px;
+margin-bottom: 10px;
+color: #e8b84b;
+}
+p {
+margin-bottom: 18px;
+color: #dde3f0;
+}
+.intro-paragraph {
+font-size: 1.1rem;
+color: #c0c8df;
+margin-bottom: 28px;
+}
+.faktaboks {
+background-color: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-left: 4px solid #e8b84b;
+border-radius: 10px;
+padding: 28px 32px;
+margin: 32px 0 40px;
+}
+.faktaboks-title {
+font-weight: 700;
+font-size: 1.1rem;
+color: #e8b84b;
+margin-bottom: 14px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.faktaboks ul {
+list-style: none;
+padding: 0;
+}
+.faktaboks ul li {
+padding: 7px 0;
+padding-left: 22px;
+position: relative;
+color: #dde3f0;
+font-size: 0.98rem;
+}
+.faktaboks ul li::before {
+content: "✓";
+position: absolute;
+left: 0;
+color: #e8b84b;
+font-weight: 700;
+}
+.info-card {
+background-color: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 10px;
+padding: 24px 28px;
+margin: 24px 0;
+}
+.info-card h3 {
+margin-top: 0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 24px 0 32px;
+font-size: 0.95rem;
+}
+thead th {
+background-color: #131720;
+color: #e8b84b;
+font-weight: 600;
+text-align: left;
+padding: 14px 16px;
+border-bottom: 2px solid rgba(255,255,255,0.07);
+}
+tbody td {
+padding: 12px 16px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+color: #dde3f0;
+}
+tbody tr:hover {
+background-color: rgba(232,184,75,0.04);
+}
+.highlight-number {
+color: #e8b84b;
+font-weight: 700;
+}
+.cta-section {
+background: linear-gradient(135deg, #131720 0%, #1a1f2e 100%);
+border: 1px solid rgba(232,184,75,0.25);
+border-radius: 14px;
+padding: 40px 36px;
+margin-top: 56px;
+text-align: center;
+}
+.cta-section h2 {
+margin-top: 0;
+color: #e8b84b;
+font-size: 1.4rem;
+}
+.cta-section p {
+color: #c0c8df;
+max-width: 520px;
+margin: 0 auto 24px;
+}
+.cta-button {
+display: inline-block;
+background-color: #e8b84b;
+color: #0b0f17;
+font-weight: 700;
+font-size: 1.05rem;
+padding: 14px 36px;
+border-radius: 8px;
+transition: background-color 0.2s, transform 0.2s;
+}
+.cta-button:hover {
+background-color: #f5cb6a;
+text-decoration: none;
+transform: translateY(-1px);
+}
+ul.regular-list {
+margin: 12px 0 20px 20px;
+}
+ul.regular-list li {
+margin-bottom: 8px;
+color: #dde3f0;
+}
+footer {
+max-width: 900px;
+margin: 0 auto;
+padding: 32px 20px;
+border-top: 1px solid rgba(255,255,255,0.07);
+text-align: center;
+color: #8d97b0;
+font-size: 0.85rem;
+line-height: 1.7;
+}
+footer .footer-logo {
+font-size: 1.1rem;
+font-weight: 700;
+margin-bottom: 8px;
+}
+footer .footer-logo span:first-child {
+color: #f0f4fc;
+}
+footer .footer-logo span:last-child {
+color: #e8b84b;
+}
+@media (max-width: 600px) {
+h1 {
+font-size: 1.7rem;
+}
+h2 {
+font-size: 1.25rem;
+}
+nav ul {
+gap: 16px;
+}
+.faktaboks {
+padding: 20px 20px;
+}
+.cta-section {
+padding: 28px 20px;
+}
+main {
+padding: 32px 16px 60px;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo"><span>Watt</span><span>guiden</span></div>
+<ul>
+<li><a href="index.html">Hjem</a></li>
+<li><a href="index.html#kalkulator">Kalkulator</a></li>
+<li><a href="index.html#leverandorer">Leverandører</a></li>
+</ul>
+</nav>
+
+<main>
+<p class="meta-line">Publisert 22. juni 2026 · Oppdatert 22. juni 2026 · Av redaksjonen i Wattguiden</p>
+
+<h1>Strømstøtte 2026 – hvem får hva og hvor mye?</h1>
+
+<p class="intro-paragraph">Strømstøtten har vært en livline for norske husholdninger siden energikrisen traff Europa. Men regelverket endrer seg jevnlig, og mange er usikre på hva som faktisk gjelder i 2026. I denne guiden gir vi deg full oversikt over gjeldende satser, hvem som kvalifiserer, og hvordan du kan kombinere strømstøtte med smarte strømavtaler for å holde regningen så lav som mulig.</p>
+
+<div class="faktaboks">
+<div class="faktaboks-title">📋 Nøkkelpunkter om strømstøtten 2026</div>
+<ul>
+<li>Staten dekker 90 % av strømprisen over 73 øre/kWh (inkl. mva) for husholdninger</li>
+<li>Støtten beregnes time for time basert på spotpris i ditt prisområde</li>
+<li>Grensen gjelder forbruk opp til 5 000 kWh per måned</li>
+<li>Ordningen er videreført til og med desember 2026, med evaluering i september</li>
+<li>Du trenger ikke søke – støtten trekkes automatisk fra strømregningen din</li>
+</ul>
+</div>
+
+<h2>Hvordan fungerer strømstøtten i 2026?</h2>
+
+<p>Strømstøtteordningen i 2026 bygger på den samme modellen som har vært gjeldende siden 2022, men med noen viktige justeringer. Staten dekker <span class="highlight-number">90 prosent</span> av den gjennomsnittlige spotprisen som overstiger <span class="highlight-number">73 øre per kilowattime</span> (inkludert merverdiavgift) i ditt prisområde.</p>
+
+<p>Det som er viktig å forstå, er at beregningen skjer time for time. Det betyr at støtten beregnes basert på faktisk spotpris for hver enkelt time i måneden, ikke som et enkelt gjennomsnitt. I praksis kan dette bety at du får støtte for noen timer på døgnet selv om gjennomsnittsprisen for hele dagen er under terskelverdi.</p>
+
+<p>Norge er delt inn i fem prisområder (NO1–NO5), og strømstøtten beregnes separat for hvert område. Husholdninger i Sør-Norge (NO1, NO2 og NO5) har historisk sett mottatt mest i støtte, ettersom prisene her er tettere knyttet til det europeiske kraftmarkedet. I Nord-Norge og Midt-Norge har prisene som regel vært lavere, og dermed har utbetalingene også vært mer beskjedne.</p>
+
+<h3>Hvem kvalifiserer for strømstøtte?</h3>
+
+<p>Alle husholdningskunder med strømmåler registrert på en privatbolig kvalifiserer automatisk. Dette inkluderer:</p>
+
+<ul class="regular-list">
+<li>Eiere av eneboliger, rekkehus og leiligheter</li>
+<li>Leietakere med egen strømmåler</li>
+<li>Fritidsboliger (hytter) – med egne regler og lavere tak</li>
+<li>Borettslag og sameier – der støtten fordeles på fellesmåler</li>
+</ul>
+
+<p>Næringskunder, landbruk og frivillige organisasjoner har egne ordninger med delvis andre satser og søknadsprosesser. Disse dekkes ikke i denne artikkelen, men vi anbefaler å sjekke Enovas nettsider for oppdatert informasjon om energitilskudd for bedrifter.</p>
+
+<h2>Hva betyr strømstøtten i kroner og øre?</h2>
+
+<p>For å gi deg et konkret bilde av hva strømstøtten faktisk betyr for lommeboken, har vi satt opp en beregning basert på typisk forbruk og prisnivåer i første halvår 2026.</p>
+
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Spotpris (snitt)</th>
+<th>Forbruk/mnd</th>
+<th>Støtte/mnd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leilighet, Oslo (NO1)</td>
+<td>95 øre/kWh</td>
+<td>800 kWh</td>
+<td>ca. 158 kr</td>
+</tr>
+<tr>
+<td>Enebolig, Bergen (NO5)</td>
+<td>110 øre/kWh</td>
+<td>2 000 kWh</td>
+<td>ca. 666 kr</td>
+</tr>
+<tr>
+<td>Enebolig, Kristiansand (NO2)</td>
+<td>125 øre/kWh</td>
+<td>2 500 kWh</td>
+<td>ca. 1 170 kr</td>
+</tr>
+<tr>
+<td>Enebolig, Trondheim (NO3)</td>
+<td>65 øre/kWh</td>
+<td>2 200 kWh</td>
+<td>0 kr</td>
+</tr>
+<tr>
+<td>Enebolig, Tromsø (NO4)</td>
+<td>55 øre/kWh</td>
+<td>2 400 kWh</td>
+<td>0 kr</td>
+</tr>
+</tbody>
+</table>
+
+<p>Som tabellen viser, er det store forskjeller mellom prisområdene. Husholdninger i Midt- og Nord-Norge har i store deler av 2026 hatt spotpriser under terskelen, og mottar dermed liten eller ingen støtte. Det betyr imidlertid at de allerede betaler mindre for strømmen – noe som er viktig å ta med i det totale bildet.</p>
+
+<h2>Slik kan du spare enda mer – uavhengig av strømstøtte</h2>
+
+<p>Strømstøtten er et sik
