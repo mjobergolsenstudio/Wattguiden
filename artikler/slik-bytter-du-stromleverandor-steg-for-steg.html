@@ -1,0 +1,393 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Lær hvordan du bytter strømleverandør steg for steg. Spar penger på strømregningen med vår enkle guide. Oppdatert juni 2026.">
+    <title>Slik bytter du strømleverandør steg for steg | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.82;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 24px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .nav-logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span.watt {
+            color: #f0f4fc;
+        }
+
+        .nav-logo span.guiden {
+            color: #e8b84b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #8d97b0;
+        }
+
+        .nav-links a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #8d97b0;
+            margin-bottom: 28px;
+        }
+
+        .breadcrumb a {
+            color: #8d97b0;
+        }
+
+        .breadcrumb a:hover {
+            color: #e8b84b;
+        }
+
+        .meta-date {
+            font-size: 0.85rem;
+            color: #8d97b0;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: #f0f4fc;
+        }
+
+        .intro {
+            font-size: 1.12rem;
+            color: #8d97b0;
+            margin-bottom: 36px;
+            line-height: 1.75;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #f0f4fc;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.18rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: #f0f4fc;
+        }
+
+        .faktaboks {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin: 32px 0 40px;
+        }
+
+        .faktaboks-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #e8b84b;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.88rem;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            padding: 7px 0;
+            padding-left: 22px;
+            position: relative;
+            color: #f0f4fc;
+            font-size: 0.98rem;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            font-size: 0.85rem;
+        }
+
+        .steg-kort {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin: 20px 0;
+        }
+
+        .steg-nummer {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 800;
+            font-size: 0.82rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .steg-kort h3 {
+            margin-top: 4px;
+            color: #f0f4fc;
+        }
+
+        .steg-kort p {
+            color: #8d97b0;
+            margin-bottom: 0;
+        }
+
+        ul.vanlig-liste {
+            margin: 12px 0 22px 20px;
+            color: #f0f4fc;
+        }
+
+        ul.vanlig-liste li {
+            margin-bottom: 8px;
+        }
+
+        .leverandor-tabell {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px;
+            font-size: 0.95rem;
+        }
+
+        .leverandor-tabell th {
+            text-align: left;
+            padding: 12px 16px;
+            background-color: #131720;
+            color: #e8b84b;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .leverandor-tabell td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            color: #f0f4fc;
+        }
+
+        .leverandor-tabell tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cta-boks {
+            background: linear-gradient(135deg, #1a1f2e, #131720);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 36px 34px;
+            margin: 56px 0 20px;
+            text-align: center;
+        }
+
+        .cta-boks h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.4rem;
+        }
+
+        .cta-boks p {
+            color: #8d97b0;
+            margin-bottom: 24px;
+        }
+
+        .cta-knapp {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.02rem;
+            padding: 14px 36px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-knapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(232, 184, 75, 0.25);
+            opacity: 1;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo span.watt {
+            color: #f0f4fc;
+        }
+
+        .footer-logo span.guiden {
+            color: #e8b84b;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.82rem;
+            color: #8d97b0;
+            max-width: 520px;
+            margin: 8px auto 0;
+            line-height: 1.6;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #8d97b0;
+            margin-top: 16px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .faktaboks, .steg-kort, .cta-boks {
+                padding: 22px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo"><span class="watt">Watt</span><span class="guiden">guiden</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#leverandorer">Leverandører</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Forside</a> &rsaquo; Slik bytter du strømleverandør
+        </div>
+
+        <div class="meta-date">Oppdatert 29. juni 2026</div>
+
+        <h1>Slik bytter du strømleverandør steg for steg</h1>
+
+        <p class="intro">Å bytte strømleverandør er en av de enkleste måtene å spare penger på i hverdagen. Likevel lar mange nordmenn være – ofte fordi prosessen virker mer komplisert enn den egentlig er. I denne guiden tar vi deg gjennom hele byttet fra start til slutt, slik at du kan ta et informert valg og kutte strømkostnadene allerede fra neste faktura.</p>
+
+        <div class="faktaboks">
+            <div class="faktaboks-title">Faktaboks – det viktigste å vite</div>
+            <ul>
+                <li>Å bytte strømleverandør er gratis og tar vanligvis 2–14 virkedager.</li>
+                <li>Du beholder nettselskapet ditt uansett – kun kraftleverandøren endres.</li>
+                <li>Det finnes ingen oppsigelsestid på standard variabelavtaler.</li>
+                <li>Gjennomsnittlig norsk husholdning kan spare 2 000–5 000 kr i året ved å velge riktig avtale.</li>
+                <li>Du trenger kun målepunkt-ID (finnes på strømfakturaen) for å bytte.</li>
+            </ul>
+        </div>
+
+        <h2>Hvorfor bør du vurdere å bytte strømleverandør?</h2>
+
+        <p>De fleste nordmenn har et bevisst forhold til hva de betaler for dagligvarer, forsikring og mobilabonnement. Men strømavtalen? Den blir ofte liggende urørt i årevis. Problemet er at mange havner på leverandørens standardavtale – ofte kalt «ventetariff» eller «pliktleveranse» – som nesten alltid er dyrere enn det markedet tilbyr.</p>
+
+        <p>Ifølge Forbrukerrådet betaler hundretusenvis av norske husholdninger langt mer enn nødvendig for strømmen sin. Forskjellen mellom den dyreste og billigste avtalen kan utgjøre flere tusen kroner i året, avhengig av forbruket ditt. Ved å bruke noen minutter på å sammenligne leverandører som <strong>Tibber</strong>, <strong>Cheap Energy</strong>, <strong>Fjordkraft</strong>, <strong>Jærkraft</strong>, <strong>NTE</strong> og <strong>Hafslund</strong>, kan du sikre deg en avtale som faktisk passer din husholdning.</p>
+
+        <h2>De ulike strømavtalene forklart</h2>
+
+        <p>Før du bytter, er det lurt å forstå hvilke avtaletyper som finnes. Valget av avtale er minst like viktig som valget av leverandør.</p>
+
+        <h3>Spotprisavtale</h3>
+        <p>Med en spotprisavtale betaler du markedspris for strømmen, time for time. I tillegg kommer et fast månedlig påslag eller et lite ørepåslag per kilowattime. Leverandører som <strong>Tibber</strong> og <strong>Cheap Energy</strong> er kjent for lave påslag på spot, og Tibber tilbyr i tillegg en app som hjelper deg å flytte forbruket til de billigste timene. Spotpris er historisk sett den billigste avtaleformen over tid.</p>
+
+        <h3>Variabel pris</h3>
+        <p>Prisen justeres av leverandøren, vanligvis med 14 dagers varsel. Denne avtalen gir noe forutsigbarhet, men du risikerer å betale mer enn spotpris. <strong>Fjordkraft</strong> og <strong>Hafslund</strong> tilbyr variabel
