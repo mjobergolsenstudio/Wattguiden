@@ -1,0 +1,364 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Er smart strømstyring med app verdt det? Vi ser på funksjoner, besparelser og apper fra Tibber, Cheap Energy, Fjordkraft og flere.">
+    <title>Smart strømstyring med app – verdt det? | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 20px 80px;
+        }
+
+        .meta {
+            color: #8d97b0;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .intro {
+            font-size: 1.12rem;
+            color: #8d97b0;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #f0f4fc;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        .faktaboks {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 32px 0 40px;
+        }
+
+        .faktaboks h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e8b84b;
+            margin-bottom: 16px;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: #f0f4fc;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ul.normal-list {
+            padding-left: 20px;
+            margin-bottom: 18px;
+        }
+
+        ul.normal-list li {
+            margin-bottom: 8px;
+        }
+
+        .leverandor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0 32px;
+        }
+
+        .leverandor-kort {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 22px 24px;
+        }
+
+        .leverandor-kort h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+        }
+
+        .leverandor-kort p {
+            font-size: 0.93rem;
+            color: #8d97b0;
+            margin-bottom: 0;
+        }
+
+        .cta-boks {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 36px 32px;
+            text-align: center;
+            margin-top: 56px;
+        }
+
+        .cta-boks h2 {
+            margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.4rem;
+        }
+
+        .cta-boks p {
+            color: #8d97b0;
+            margin-bottom: 24px;
+        }
+
+        .cta-knapp {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .cta-knapp:hover {
+            background-color: #f0c95e;
+            text-decoration: none;
+        }
+
+        .prosent-boks {
+            background-color: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .prosent-boks .tall {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #e8b84b;
+        }
+
+        .prosent-boks .beskrivelse {
+            color: #8d97b0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            text-align: center;
+            color: #8d97b0;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        footer .logo-footer {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        footer .logo-footer span:first-child {
+            color: #f0f4fc;
+        }
+
+        footer .logo-footer span:last-child {
+            color: #e8b84b;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .leverandor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            .faktaboks {
+                padding: 22px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>Watt</span><span>guiden</span></div>
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#kalkulator">Kalkulator</a></li>
+        <li><a href="index.html#artikler">Artikler</a></li>
+    </ul>
+</nav>
+
+<main>
+    <p class="meta">Publisert 3. august 2026 · Oppdatert av Wattguiden-redaksjonen</p>
+
+    <h1>Smart strømstyring med app – er det virkelig verdt det?</h1>
+
+    <p class="intro">Stadig flere nordmenn styrer strømforbruket sitt via apper på mobilen. Men gir det faktisk lavere strømregning, eller er det bare en teknisk gadget uten reell verdi? Vi har sett nærmere på hva smart strømstyring innebærer, hvilke leverandører som tilbyr de beste løsningene, og hvor mye du faktisk kan spare.</p>
+
+    <div class="faktaboks">
+        <h3>5 nøkkelpunkter om smart strømstyring</h3>
+        <ul>
+            <li>Smart strømstyring kan redusere strømregningen med 10–30 % for en gjennomsnittlig husholdning</li>
+            <li>Apper som Tibber og Cheap Energy flytter forbruk automatisk til timene med lavest spotpris</li>
+            <li>Varmtvannsberedere, elbillading og varmepumper gir størst sparepotensial ved smart styring</li>
+            <li>Du trenger ofte smarte plugger, en HAN-port-leser eller integrasjon med smarthjem-utstyr</li>
+            <li>De fleste strømleverandører tilbyr nå en form for appbasert forbruksinnsikt – men funksjonaliteten varierer stort</li>
+        </ul>
+    </div>
+
+    <h2>Hva er smart strømstyring egentlig?</h2>
+
+    <p>Smart strømstyring handler om å bruke teknologi – ofte en mobilapp – til å overvåke, analysere og automatisk justere strømforbruket i hjemmet ditt. I stedet for å bruke strøm tilfeldig gjennom døgnet, flytter du forbruket til de timene der strømprisen er lavest. Dette er spesielt verdifullt i Norge, der vi har timesbaserte spotpriser som kan variere enormt i løpet av et enkelt døgn.</p>
+
+    <p>Det hele bygger på den smarte strømmåleren (AMS-måleren) som ble installert i alle norske hjem fra 2019. Denne måleren registrerer forbruket ditt time for time, og via HAN-porten kan tredjepartsapper og -enheter hente ut sanntidsdata om strømbruken din. Det er dette som gjør det mulig for apper som Tibber å gi deg live oversikt over forbruket og automatisere styringen av ulike enheter.</p>
+
+    <h3>Automatisk vs. manuell styring</h3>
+
+    <p>Det er viktig å skille mellom to typer smart strømstyring. Den manuelle varianten gir deg innsikt og varsler: appen viser deg morgendagens priser, og du bestemmer selv når du setter på vaskemaskinen eller lader elbilen. Den automatiske varianten går et steg videre og kobler seg direkte til smarte enheter i hjemmet. Da kan appen for eksempel skru av varmtvannsberederen midt på dagen når prisene er høyest, og skru den på igjen klokken 03:00 når strømmen koster en brøkdel.</p>
+
+    <div class="prosent-boks">
+        <div class="tall">10–30 %</div>
+        <div class="beskrivelse">Typisk besparelse med aktiv smart strømstyring ifølge NVE og bransjeestimater</div>
+    </div>
+
+    <h2>Hvilke leverandører tilbyr de beste appene?</h2>
+
+    <p>Det norske strømmarkedet har utviklet seg enormt de siste årene, og flere leverandører satser tungt på appbasert styring og innsikt. Her er en oversikt over de mest relevante aktørene per august 2026:</p>
+
+    <div class="leverandor-grid">
+        <div class="leverandor-kort">
+            <h3>Tibber</h3>
+            <p>Markedslederen innen smart strømstyring. Appen tilbyr sanntidsforbruk, automatisk elbillading, styring av varmtvannsberedere og varmepumper, samt integrasjon med et bredt utvalg smarthjem-enheter. Spotprisavtale uten påslag.</p>
+        </div>
+        <div class="leverandor-kort">
+            <h3>Cheap Energy</h3>
+            <p>Nykommeren som utfordrer Tibber med en ren, brukervennlig app og lave kostnader. Fokuserer på enkel forbruksoversikt, prisvarsler og automatisk styring av de mest strømkrevende enhetene i hjemmet.</p>
+        </div>
+        <div class="leverandor-kort">
+            <h3>Fjordkraft</h3>
+            <p>En av Norges største strømleverandører med en veletablert app som gir god forbruksinnsikt, budsjettverktøy og strømprisprognoser. Har forbedret smartstyrings-funksjonene betydelig de siste årene.</p>
+        </div>
+        <div class="leverandor-kort">
+            <h3>Hafslund</h3>
+            <p>Storbyenes favoritt med en solid app som tilbyr forbruksoversikt, fakturasporing og integrasjon med utvalgte smarthjem-løsninger. Passer godt for kunder i østlandsområdet.</p>
+        </div>
+        <div class="leverandor-kort">
+            <h3>NTE</h3>
+            <p>Trøndelags egen leverandør tilbyr en stadig bedre app med forbruksanalyse og prisoversikt. NTE har også satset på kundestøtte via appen, noe som gjør det enkelt å få hjelp raskt.</p>
+        
