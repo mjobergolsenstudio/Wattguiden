@@ -1,0 +1,392 @@
+```html
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Finn den billigste strømavtalen for elbillading i 2026. Vi sammenligner Tibber, Cheap Energy, Fjordkraft og flere for lavest mulig ladekostnad.">
+    <title>Strøm til elbil – billigste løsning i 2026 | Wattguiden.no</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f17;
+            color: #f0f4fc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        a {
+            color: #e8b84b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .logo span:last-child {
+            color: #e8b84b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #8d97b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #e8b84b;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem 3rem;
+        }
+
+        .meta-date {
+            color: #8d97b0;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: #e8b84b;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #8d97b0;
+            margin-bottom: 2rem;
+            max-width: 720px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f0f4fc;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.6rem;
+            color: #e8b84b;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .faktaboks {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #e8b84b;
+            border-radius: 10px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .faktaboks h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e8b84b;
+            margin-bottom: 1rem;
+        }
+
+        .faktaboks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faktaboks ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.65rem;
+            color: #f0f4fc;
+        }
+
+        .faktaboks ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .leverandor-tabell {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            background-color: #131720;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .leverandor-tabell th {
+            background-color: rgba(232, 184, 75, 0.1);
+            color: #e8b84b;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .leverandor-tabell td {
+            padding: 0.85rem 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            font-size: 0.95rem;
+        }
+
+        .leverandor-tabell tr:hover td {
+            background-color: rgba(232, 184, 75, 0.03);
+        }
+
+        .tips-kort {
+            background-color: #131720;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .tips-kort h3 {
+            margin-top: 0;
+        }
+
+        .cta-boks {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .cta-boks h2 {
+            margin-top: 0;
+            color: #e8b84b;
+        }
+
+        .cta-boks p {
+            color: #8d97b0;
+            max-width: 560px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-knapp {
+            display: inline-block;
+            background-color: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.9rem 2.25rem;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .cta-knapp:hover {
+            background-color: #d4a63c;
+            text-decoration: none;
+        }
+
+        ul.innhold-liste {
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        ul.innhold-liste li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo span:first-child {
+            color: #f0f4fc;
+        }
+
+        .footer-logo span:last-child {
+            color: #e8b84b;
+        }
+
+        .footer-provisjon {
+            color: #8d97b0;
+            font-size: 0.82rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .footer-copy {
+            color: #8d97b0;
+            font-size: 0.82rem;
+            margin-top: 0.35rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.65rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .faktaboks {
+                padding: 1.25rem 1.25rem;
+            }
+
+            .leverandor-tabell th,
+            .leverandor-tabell td {
+                padding: 0.65rem 0.75rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><span>Watt</span><span>guiden</span></div>
+        <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#leverandorer">Leverandører</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="meta-date">Publisert 10. august 2026 · Oppdatert august 2026</p>
+
+        <h1>Strøm til elbil – <span>billigste løsning</span> i 2026</h1>
+
+        <p class="intro">Lading av elbil utgjør en betydelig del av strømregningen for norske husholdninger. Med riktig strømavtale og smarte ladestrategier kan du spare flere tusen kroner i året. Vi har sammenlignet de mest aktuelle leverandørene og ladeløsningene for 2026.</p>
+
+        <div class="faktaboks">
+            <h3>Nøkkelpunkter – elbillading 2026</h3>
+            <ul>
+                <li>En typisk elbil bruker mellom 2 000 og 5 000 kWh per år til lading, avhengig av kjørelengde.</li>
+                <li>Spotprisavtaler med automatisk styring av ladetidspunkt gir ofte den laveste totalkostnaden.</li>
+                <li>Tibber, Cheap Energy og Fjordkraft tilbyr alle integrasjoner som lar deg lade når strømmen er billigst.</li>
+                <li>Nattlading mellom kl. 00 og 06 er typisk 30–60 % rimeligere enn lading på ettermiddagen.</li>
+                <li>Hjemmelader med smart styring kan spare deg 2 000–4 500 kr årlig sammenlignet med «dum» lading.</li>
+            </ul>
+        </div>
+
+        <h2>Hvorfor strømavtalen er avgjørende for ladekostnaden</h2>
+
+        <p>De fleste norske elbileiere lader hovedsakelig hjemme, og hjemmeladingens kostnad avhenger direkte av hvilken strømavtale du har. Mens forskjellen mellom strømavtaler kan virke liten per kilowattime, blir den merkbar når du lader 3 000–5 000 kWh i året. En forskjell på bare 5 øre per kWh betyr 150–250 kroner i året – og i praksis kan forskjellen mellom en dyr fastprisavtale og en godt optimalisert spotavtale være langt større enn det.</p>
+
+        <p>I 2026 ser vi at de fleste forbrukseksperter anbefaler spotprisavtaler for elbileiere. Grunnen er enkel: når du kombinerer en spotavtale med en smart hjemmelader, kan du automatisk flytte ladingen til timene der strømprisen er lavest. Dette er spesielt lønnsomt i perioder med store prisvariasjoner gjennom døgnet, noe som har blitt mer vanlig med økt andel sol- og vindkraft i det nordiske kraftsystemet.</p>
+
+        <h2>Leverandørsammenligning – hvem er billigst for elbillading?</h2>
+
+        <p>Vi har sett nærmere på seks av de mest populære strømleverandørene blant norske elbileiere i 2026. Her vurderer vi månedspris, påslag på spotpris, og ikke minst kvaliteten på appen og smart lading-integrasjoner.</p>
+
+        <table class="leverandor-tabell">
+            <thead>
+                <tr>
+                    <th>Leverandør</th>
+                    <th>Avtale</th>
+                    <th>Påslag</th>
+                    <th>Mnd.pris</th>
+                    <th>Smart lading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tibber</td>
+                    <td>Spot (time)</td>
+                    <td>0 øre/kWh</td>
+                    <td>49 kr</td>
+                    <td>Ja ✔</td>
+                </tr>
+                <tr>
+                    <td>Cheap Energy</td>
+                    <td>Spot (time)</td>
+                    <td>0 øre/kWh</td>
+                    <td>29 kr</td>
+                    <td>Ja ✔</td>
+                </tr>
+                <tr>
+                    <td>Fjordkraft</td>
+                    <td>Strøm til elbil</td>
+                    <td>1,9 øre/kWh</td>
+                    <td>39 kr</td>
+                    <td>Ja ✔</td>
+                </tr>
+                <tr>
+                    <td>Jærkraft</td>
+                    <td>Spot (time)</td>
+                    <td>1,5 øre/kWh</td>
+                    <td>0 kr</td>
+                    <td>Begrenset</td>
+                </tr>
+                <tr>
+                    <td>NTE</td>
+                    <td>Spot (time)</td>
+                    <td>2,0 øre/kWh</td>
+                    <td>0 kr</td>
+                    <td>
