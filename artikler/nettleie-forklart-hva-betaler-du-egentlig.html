@@ -1,3 +1,5 @@
+
+
 ```html
 <!DOCTYPE html>
 <html lang="nb">
@@ -5,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Hva er nettleie, og hva betaler du egentlig? Vi forklarer alle delene av nettleieregningen, hvordan den beregnes og hvordan du kan spare penger.">
+    <meta name="description" content="Hva er nettleie, og hva betaler du egentlig? Vi forklarer fastledd, energiledd, kapasitetsledd og hvordan du kan redusere nettleiekostnadene dine.">
     <title>Nettleie forklart – hva betaler du egentlig? | Wattguiden.no</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +23,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0f17;
             color: #f0f4fc;
-            line-height: 1.75;
+            line-height: 1.7;
             font-size: 17px;
         }
 
@@ -37,55 +39,58 @@
         }
 
         nav {
+            background: #131720;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 1.1rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 24px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
+        .nav-logo {
             font-size: 1.45rem;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
 
-        .logo span:first-child {
+        .nav-logo span.watt {
             color: #f0f4fc;
         }
 
-        .logo span:last-child {
+        .nav-logo span.guiden {
             color: #e8b84b;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
-            gap: 22px;
+            gap: 1.6rem;
+            list-style: none;
         }
 
-        nav ul li a {
+        .nav-links a {
             color: #8d97b0;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
-        nav ul li a:hover {
+        .nav-links a:hover {
             color: #e8b84b;
             text-decoration: none;
         }
 
         main {
-            max-width: 760px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 20px 20px 60px;
+            padding: 3rem 1.5rem 4rem;
         }
 
         .breadcrumb {
             font-size: 0.85rem;
             color: #8d97b0;
-            margin-bottom: 28px;
+            margin-bottom: 1.8rem;
         }
 
         .breadcrumb a {
@@ -96,63 +101,64 @@
             color: #e8b84b;
         }
 
-        .meta-date {
-            font-size: 0.85rem;
+        .meta-line {
             color: #8d97b0;
-            margin-bottom: 10px;
+            font-size: 0.88rem;
+            margin-bottom: 2rem;
         }
 
         h1 {
             font-size: 2.3rem;
             font-weight: 800;
-            letter-spacing: -0.8px;
             line-height: 1.2;
-            margin-bottom: 18px;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.5px;
             color: #f0f4fc;
-        }
-
-        .intro {
-            font-size: 1.12rem;
-            color: #8d97b0;
-            margin-bottom: 36px;
-            line-height: 1.8;
         }
 
         h2 {
             font-size: 1.55rem;
             font-weight: 700;
-            letter-spacing: -0.4px;
-            margin-top: 48px;
-            margin-bottom: 16px;
+            margin-top: 2.6rem;
+            margin-bottom: 0.9rem;
             color: #f0f4fc;
+            letter-spacing: -0.3px;
         }
 
         h3 {
-            font-size: 1.18rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 10px;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
             color: #e8b84b;
         }
 
         p {
-            margin-bottom: 18px;
+            margin-bottom: 1.15rem;
+            color: #f0f4fc;
+        }
+
+        .muted {
+            color: #8d97b0;
         }
 
         .faktaboks {
-            background-color: #131720;
+            background: #131720;
             border: 1px solid rgba(255,255,255,0.07);
             border-left: 4px solid #e8b84b;
             border-radius: 10px;
-            padding: 28px 30px;
-            margin: 32px 0 40px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 2.4rem;
         }
 
-        .faktaboks h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
+        .faktaboks-title {
+            font-size: 1.05rem;
+            font-weight: 700;
             color: #e8b84b;
-            margin-bottom: 14px;
+            margin-bottom: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.88rem;
         }
 
         .faktaboks ul {
@@ -161,8 +167,8 @@
         }
 
         .faktaboks ul li {
-            padding: 7px 0;
-            padding-left: 24px;
+            padding: 0.45rem 0;
+            padding-left: 1.5rem;
             position: relative;
             color: #f0f4fc;
             font-size: 0.97rem;
@@ -172,149 +178,139 @@
             content: "⚡";
             position: absolute;
             left: 0;
-            top: 7px;
+            top: 0.45rem;
+            font-size: 0.85rem;
+        }
+
+        .card {
+            background: #131720;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 1.5rem 1.7rem;
+            margin: 1.6rem 0;
+        }
+
+        .card h3 {
+            margin-top: 0;
         }
 
         ul.content-list, ol.content-list {
-            margin: 0 0 22px 20px;
+            margin: 0.5rem 0 1.2rem 1.4rem;
+            color: #f0f4fc;
         }
 
         ul.content-list li, ol.content-list li {
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
 
-        .info-card {
-            background-color: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 10px;
-            padding: 26px 28px;
-            margin: 26px 0;
+        .cta-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+            border: 1px solid #e8b84b;
+            border-radius: 14px;
+            padding: 2.4rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
         }
 
-        .info-card h3 {
+        .cta-section h2 {
             margin-top: 0;
+            color: #e8b84b;
+            font-size: 1.5rem;
+        }
+
+        .cta-section p {
+            color: #8d97b0;
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #e8b84b;
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(232, 184, 75, 0.25);
+            opacity: 1;
+            text-decoration: none;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 24px 0 30px;
+            margin: 1.2rem 0 1.6rem;
             font-size: 0.95rem;
         }
 
         thead th {
-            text-align: left;
+            background: #1a1f2e;
             color: #e8b84b;
             font-weight: 600;
-            padding: 12px 14px;
-            border-bottom: 2px solid rgba(255,255,255,0.07);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
         tbody td {
-            padding: 11px 14px;
+            padding: 0.7rem 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.07);
             color: #f0f4fc;
         }
 
         tbody tr:hover {
-            background-color: rgba(232,184,75,0.04);
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #131720 0%, #1a1f2e 100%);
-            border: 1px solid #e8b84b;
-            border-radius: 12px;
-            padding: 36px 34px;
-            text-align: center;
-            margin: 52px 0 20px;
-        }
-
-        .cta-box h2 {
-            margin-top: 0;
-            color: #e8b84b;
-            font-size: 1.45rem;
-        }
-
-        .cta-box p {
-            color: #8d97b0;
-            max-width: 520px;
-            margin: 0 auto 22px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: #e8b84b;
-            color: #0b0f17;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 14px 36px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s, transform 0.15s;
-        }
-
-        .cta-btn:hover {
-            background-color: #d4a63e;
-            text-decoration: none;
-            transform: translateY(-1px);
-            opacity: 1;
+            background: rgba(232,184,75,0.04);
         }
 
         footer {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            background: #131720;
             border-top: 1px solid rgba(255,255,255,0.07);
             text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
         }
 
         .footer-logo {
             font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .footer-logo span:first-child {
-            color: #f0f4fc;
-        }
-
-        .footer-logo span:last-child {
-            color: #e8b84b;
+            margin-bottom: 0.6rem;
         }
 
         .footer-disclaimer {
+            color: #8d97b0;
             font-size: 0.82rem;
-            color: #8d97b0;
-            max-width: 520px;
-            margin: 0 auto;
-            line-height: 1.6;
+            max-width: 540px;
+            margin: 0.5rem auto 0;
+            line-height: 1.5;
         }
 
-        .footer-copy {
-            font-size: 0.78rem;
-            color: #8d97b0;
-            margin-top: 16px;
-        }
-
-        @media (max-width: 640px) {
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 0.7rem;
+                padding: 1rem;
+            }
             h1 {
                 font-size: 1.7rem;
             }
-
             h2 {
                 font-size: 1.3rem;
             }
-
-            nav ul {
-                gap: 14px;
+            main {
+                padding: 2rem 1rem 3rem;
             }
-
             .faktaboks {
-                padding: 22px 20px;
+                padding: 1.2rem;
             }
-
-            .cta-box {
-                padding: 28px 22px;
+            .cta-section {
+                padding: 1.8rem 1.2rem;
             }
         }
     </style>
@@ -322,54 +318,49 @@
 <body>
 
     <nav>
-        <div class="logo"><span>Watt</span><span>guiden</span></div>
-        <ul>
-            <li><a href="index.html">Hjem</a></li>
-            <li><a href="index.html#sammenlign">Sammenlign</a></li>
+        <div class="nav-logo"><span class="watt">Watt</span><span class="guiden">guiden</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Forside</a></li>
             <li><a href="index.html#kalkulator">Kalkulator</a></li>
+            <li><a href="index.html#leverandorer">Leverandører</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="breadcrumb">
-            <a href="index.html">Hjem</a> / <a href="index.html#guider">Guider</a> / Nettleie forklart
+            <a href="index.html">Hjem</a> &rsaquo; <span>Nettleie forklart</span>
         </div>
 
-        <p class="meta-date">Oppdatert 1. april 2026 · 8 min lesetid</p>
-
         <h1>Nettleie forklart – hva betaler du egentlig?</h1>
+        <p class="meta-line">Publisert 17. august 2026 · Skrevet av redaksjonen i Wattguiden</p>
 
-        <p class="intro">Mange nordmenn blander sammen strømpris og nettleie, men dette er to helt separate kostnader på strømregningen din. Nettleien utgjør ofte en like stor andel som selve strømmen du bruker. I denne guiden forklarer vi nøyaktig hva nettleie er, hvordan den beregnes, og hva du kan gjøre for å holde kostnadene nede.</p>
+        <p>Når du mottar strømregningen din, er det lett å tro at hele beløpet går til strømleverandøren. Men sannheten er at en betydelig del av det du betaler, er <strong>nettleie</strong> – en avgift som går til det lokale nettselskapet som eier og drifter strømnettet der du bor. I denne guiden bryter vi ned nettleien bit for bit, slik at du forstår nøyaktig hva pengene dine går til, og hvordan du kan påvirke kostnadene.</p>
 
         <div class="faktaboks">
-            <h3>5 ting du bør vite om nettleie</h3>
+            <div class="faktaboks-title">Nøkkelpunkter om nettleie</div>
             <ul>
-                <li>Nettleie er betaling for transport av strøm gjennom strømnettet – ikke for selve strømmen.</li>
-                <li>Du kan ikke velge nettselskap; det bestemmes av hvor du bor.</li>
-                <li>Fra 2022 ble ny nettleiemodell innført med kapasitetsledd basert på forbrukstopper.</li>
-                <li>Gjennomsnittlig nettleie i Norge er ca. 45–65 øre/kWh inkl. avgifter (2026-tall).</li>
-                <li>Du kan redusere nettleien ved å jevne ut strømforbruket gjennom døgnet.</li>
+                <li>Nettleie utgjør typisk 30–50 % av den totale strømregningen din, avhengig av forbruk og prisområde.</li>
+                <li>Du kan <strong>ikke</strong> velge nettselskap – det er bestemt av hvor du bor – men du kan velge strømleverandør fritt.</li>
+                <li>Siden 2022 har kapasitetsleddet gjort det lønnsomt å spre strømforbruket utover døgnet.</li>
+                <li>Nettleiesatsene fastsettes av nettselskapene, men reguleres av Reguleringsmyndigheten for energi (RME) under NVE.</li>
+                <li>Statlige avgifter som elavgift (forbruksavgift) og merverdiavgift (MVA) kommer i tillegg til selve nettleien.</li>
             </ul>
         </div>
 
-        <h2>Hva er nettleie, og hvorfor betaler du den?</h2>
+        <h2>Hva er nettleie, og hvorfor betaler vi det?</h2>
 
-        <p>Nettleie er den avgiften du betaler til det lokale nettselskapet for å frakte strøm fra kraftverket og helt frem til stikkontakten i hjemmet ditt. Norge har et enormt strømnett bestående av kraftlinjer, transformatorstasjoner, kabler og avansert styringsteknologi. Alt dette må driftes, vedlikeholdes og oppgraderes – og det er nettleien som finansierer dette arbeidet.</p>
+        <p>Nettleie er betalingen for transport av strøm fra kraftverkene til stikkontakten din. Tenk på det som fraktkostnaden for elektrisiteten. Pengene går til å bygge, vedlikeholde og drifte det fysiske strømnettet – alt fra høyspentmaster og transformatorer til kabler i bakken i nabolaget ditt.</p>
 
-        <p>Det er viktig å forstå at nettleien er adskilt fra selve strømavtalen din. Selv om du har en rimelig spotprisavtale gjennom for eksempel <strong>Tibber</strong>, <strong>Cheap Energy</strong> eller <strong>Fjordkraft</strong>, vil nettleien komme i tillegg. Nettselskapene er regulert av Reguleringsmyndigheten for energi (RME), som sikrer at de ikke tar urimelig høye priser, men det er likevel forskjeller mellom ulike nettselskaper rundt i landet.</p>
+        <p>Norge har rundt 120 nettselskaper som drifter hvert sitt geografiske område. Bor du i Oslo-regionen, er det typisk <strong>Hafslund</strong> Nett (nå Elvia) som er ditt nettselskap. Bor du i Trøndelag, er det gjerne <strong>NTE</strong> Nett. Du kan aldri bytte nettselskap, men det er viktig å forstå at nettleien er helt adskilt fra selve strømavtalen du har med leverandører som <strong>Tibber</strong>, <strong>Cheap Energy</strong>, <strong>Fjordkraft</strong> eller <strong>Jærkraft</strong>.</p>
 
-        <p>I motsetning til strømleverandøren din, kan du ikke bytte nettselskap. Det er nettselskapet som eier og drifter strømnettet i ditt område som fakturerer deg. Bor du i Oslo, er det Elvia som er ditt nettselskap. Bor du i Trøndelag, kan det være <strong>NTE Nett</strong>. Bor du på Jæren, er det <strong>Jærkraft Nett</strong> som sender regningen. Og i store deler av Østlandet er det Hafslund-konsernet og <strong>Hafslund</strong> Nett (nå Elvia) som er ansvarlig.</p>
+        <h2>De tre hovedkomponentene i nettleien</h2>
 
-        <h2>Slik er nettleien bygget opp</h2>
+        <p>Nettleien består av flere byggesteiner. Fra og med den nye nettleiemodellen som ble innført i 2022 og videreført frem til i dag, er de tre viktigste komponentene:</p>
 
-        <p>Nettleien består av flere komponenter, og det er nyttig å forstå hver enkelt del for å skjønne hva du faktisk betaler for. Etter innføringen av den nye nettleiemodellen som gradvis ble rullet ut fra juli 2022, har strukturen fått større oppmerksomhet blant norske strømkunder.</p>
+        <h3>1. Fastledd (fast beløp per måned)</h3>
+        <p>Fastleddet er en månedlig grunnkostnad som alle kunder betaler uavhengig av strømforbruket. Dette beløpet dekker nettselskapets faste kostnader knyttet til å ha deg som kunde – måleutstyr, fakturering, beredskap og infrastruktur. Fastleddet varierer mellom nettselskaper, men ligger typisk mellom 150 og 400 kroner per måned for husholdningskunder.</p>
 
-        <h3>Fastledd</h3>
+        <h3>2. Energiledd (øre per kWh)</h3>
+        <p>Energileddet er en variabel kostnad basert på hvor mange kilowattimer (kWh) du faktisk bruker. Jo mer strøm du forbruker, desto høyere blir denne delen av nettleien. Energileddet ligger normalt mellom 5 og 35 øre per kWh, avhengig av nettselskapet og årstiden. Mange nettselskaper opererer med ulike satser for dag og natt, der nattstrøm er rimeligere.</p>
 
-        <p>Fastleddet er et fast beløp du betaler hver måned, uavhengig av hvor mye strøm du bruker. Denne delen dekker grunnkostnadene ved å være tilknyttet strømnettet. Fastleddet varierer mellom nettselskaper, men ligger typisk mellom 150 og 400 kroner per måned for en vanlig husholdning. Noen nettselskaper differensierer fastleddet basert på størrelsen på hovedsikringen din – har du en større sikring, betaler du mer.</p>
-
-        <h3>Energiledd</h3>
-
-        <p>Energileddet er den variable delen av nettleien, og beregnes ut fra hvor mange kilowattimer (kWh) du faktisk bruker. Prisen per kWh varierer gjennom døgnet, med høyere sats på dagtid (typisk kl. 06–22) og lavere sats om natten. Denne prisforskjellen er ment å motivere folk til å flytte strømforbruket til perioder med lavere belastning på nettet.</p>
-
-        
+        <h
