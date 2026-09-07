@@ -1,426 +1,434 @@
-
-
 ```html
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Er NTE strøm riktig valg for deg? Vi sammenligner priser, avtaler og kundeservice med Tibber, Fjordkraft og flere. Oppdatert april 2026.">
-    <title>NTE strøm – passer det for deg? | Wattguiden.no</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Er NTE strøm riktig valg for deg? Vi sammenligner NTE med Tibber, Fjordkraft og flere. Les vår ærlige vurdering og finn billigste strømavtale.">
+<title>NTE strøm – passer det for deg? | Wattguiden.no</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f17;
-            color: #f0f4fc;
-            line-height: 1.7;
-            font-size: 17px;
-        }
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+background-color: #0b0f17;
+color: #f0f4fc;
+line-height: 1.75;
+font-size: 17px;
+}
 
-        a {
-            color: #e8b84b;
-            text-decoration: none;
-        }
+a {
+color: #e8b84b;
+text-decoration: none;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a:hover {
+text-decoration: underline;
+}
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 24px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
+nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+max-width: 900px;
+margin: 0 auto;
+padding: 24px 20px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+}
 
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+.logo {
+font-size: 1.55rem;
+font-weight: 800;
+letter-spacing: -0.5px;
+}
 
-        .nav-logo span.watt {
-            color: #f0f4fc;
-        }
+.logo span.watt {
+color: #f0f4fc;
+}
 
-        .nav-logo span.guiden {
-            color: #e8b84b;
-        }
+.logo span.guiden {
+color: #e8b84b;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-        }
+nav ul {
+list-style: none;
+display: flex;
+gap: 22px;
+}
 
-        nav ul li a {
-            color: #8d97b0;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
+nav ul li a {
+color: #8d97b0;
+font-weight: 500;
+font-size: 0.95rem;
+}
 
-        nav ul li a:hover {
-            color: #e8b84b;
-        }
+nav ul li a:hover {
+color: #e8b84b;
+}
 
-        main {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 48px 20px 80px;
-        }
+main {
+max-width: 760px;
+margin: 0 auto;
+padding: 48px 20px 60px;
+}
 
-        .breadcrumb {
-            font-size: 0.85rem;
-            color: #8d97b0;
-            margin-bottom: 28px;
-        }
+.breadcrumb {
+font-size: 0.85rem;
+color: #8d97b0;
+margin-bottom: 28px;
+}
 
-        .breadcrumb a {
-            color: #8d97b0;
-        }
+.breadcrumb a {
+color: #8d97b0;
+}
 
-        .breadcrumb a:hover {
-            color: #e8b84b;
-        }
+.breadcrumb a:hover {
+color: #e8b84b;
+}
 
-        .meta-date {
-            font-size: 0.85rem;
-            color: #8d97b0;
-            margin-bottom: 12px;
-        }
+h1 {
+font-size: 2.3rem;
+font-weight: 800;
+line-height: 1.2;
+margin-bottom: 12px;
+letter-spacing: -0.5px;
+}
 
-        h1 {
-            font-size: 2.3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
+h1 span {
+color: #e8b84b;
+}
 
-        h1 span {
-            color: #e8b84b;
-        }
+.meta {
+color: #8d97b0;
+font-size: 0.9rem;
+margin-bottom: 36px;
+}
 
-        .intro {
-            font-size: 1.12rem;
-            color: #8d97b0;
-            margin-bottom: 36px;
-            line-height: 1.75;
-        }
+h2 {
+font-size: 1.5rem;
+font-weight: 700;
+margin-top: 44px;
+margin-bottom: 16px;
+color: #f0f4fc;
+letter-spacing: -0.3px;
+}
 
-        h2 {
-            font-size: 1.55rem;
-            font-weight: 700;
-            margin-top: 48px;
-            margin-bottom: 16px;
-            color: #f0f4fc;
-            letter-spacing: -0.3px;
-        }
+h3 {
+font-size: 1.15rem;
+font-weight: 600;
+margin-top: 28px;
+margin-bottom: 10px;
+color: #e8b84b;
+}
 
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: #e8b84b;
-        }
+p {
+margin-bottom: 18px;
+color: #dde3f0;
+}
 
-        p {
-            margin-bottom: 18px;
-        }
+.faktaboks {
+background-color: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-left: 4px solid #e8b84b;
+border-radius: 10px;
+padding: 28px 30px;
+margin: 32px 0 38px;
+}
 
-        .faktaboks {
-            background-color: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-left: 4px solid #e8b84b;
-            border-radius: 10px;
-            padding: 28px 32px;
-            margin: 32px 0 40px;
-        }
+.faktaboks h3 {
+margin-top: 0;
+font-size: 1.1rem;
+color: #e8b84b;
+margin-bottom: 14px;
+}
 
-        .faktaboks h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-            color: #e8b84b;
-            margin-bottom: 16px;
-        }
+.faktaboks ul {
+list-style: none;
+padding: 0;
+}
 
-        .faktaboks ul {
-            list-style: none;
-            padding: 0;
-        }
+.faktaboks ul li {
+padding: 7px 0;
+color: #dde3f0;
+position: relative;
+padding-left: 22px;
+}
 
-        .faktaboks ul li {
-            padding: 7px 0;
-            padding-left: 24px;
-            position: relative;
-            color: #f0f4fc;
-            font-size: 0.98rem;
-        }
+.faktaboks ul li::before {
+content: "⚡";
+position: absolute;
+left: 0;
+}
 
-        .faktaboks ul li::before {
-            content: "⚡";
-            position: absolute;
-            left: 0;
-            top: 7px;
-        }
+.card {
+background-color: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 10px;
+padding: 26px 28px;
+margin: 24px 0;
+}
 
-        ul.standard-list {
-            margin: 0 0 20px 0;
-            padding-left: 0;
-            list-style: none;
-        }
+.pros-cons {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+margin: 24px 0 32px;
+}
 
-        ul.standard-list li {
-            padding: 6px 0 6px 24px;
-            position: relative;
-        }
+.pros-cons .col {
+background-color: #131720;
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 10px;
+padding: 22px 24px;
+}
 
-        ul.standard-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #e8b84b;
-            font-weight: 700;
-        }
+.pros-cons h3 {
+margin-top: 0;
+}
 
-        .sammenligning-tabell {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0 32px;
-            font-size: 0.95rem;
-        }
+.pros-cons ul {
+list-style: none;
+padding: 0;
+}
 
-        .sammenligning-tabell th {
-            background-color: #131720;
-            color: #e8b84b;
-            padding: 14px 16px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid rgba(255,255,255,0.07);
-        }
+.pros-cons ul li {
+padding: 5px 0;
+color: #dde3f0;
+padding-left: 20px;
+position: relative;
+font-size: 0.97rem;
+}
 
-        .sammenligning-tabell td {
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            color: #f0f4fc;
-        }
+.pros-cons .pros ul li::before {
+content: "✓";
+position: absolute;
+left: 0;
+color: #4ade80;
+font-weight: 700;
+}
 
-        .sammenligning-tabell tr:hover td {
-            background-color: rgba(232, 184, 75, 0.05);
-        }
+.pros-cons .cons ul li::before {
+content: "✗";
+position: absolute;
+left: 0;
+color: #f87171;
+font-weight: 700;
+}
 
-        .card {
-            background-color: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 32px;
-            margin: 32px 0;
-        }
+.comparison-table {
+width: 100%;
+border-collapse: collapse;
+margin: 24px 0 32px;
+font-size: 0.95rem;
+}
 
-        .pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 24px 0 32px;
-        }
+.comparison-table th {
+text-align: left;
+padding: 12px 14px;
+background-color: #131720;
+color: #e8b84b;
+font-weight: 600;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+}
 
-        .pros, .cons {
-            background-color: #131720;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 10px;
-            padding: 24px;
-        }
+.comparison-table td {
+padding: 11px 14px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+color: #dde3f0;
+}
 
-        .pros h3 {
-            color: #4ade80;
-            margin-top: 0;
-        }
+.comparison-table tr:hover td {
+background-color: rgba(232,184,75,0.04);
+}
 
-        .cons h3 {
-            color: #f87171;
-            margin-top: 0;
-        }
+.cta-box {
+background: linear-gradient(135deg, #1a1f2e 0%, #131720 100%);
+border: 1px solid #e8b84b;
+border-radius: 12px;
+padding: 36px 32px;
+text-align: center;
+margin: 48px 0 20px;
+}
 
-        .pros ul, .cons ul {
-            list-style: none;
-            padding: 0;
-        }
+.cta-box h2 {
+margin-top: 0;
+color: #e8b84b;
+font-size: 1.4rem;
+}
 
-        .pros ul li, .cons ul li {
-            padding: 5px 0;
-            font-size: 0.95rem;
-        }
+.cta-box p {
+color: #8d97b0;
+max-width: 520px;
+margin: 10px auto 24px;
+}
 
-        .cta-boks {
-            background: linear-gradient(135deg, #131720 0%, #1a1f2e 100%);
-            border: 2px solid #e8b84b;
-            border-radius: 14px;
-            padding: 40px 36px;
-            text-align: center;
-            margin: 56px 0 32px;
-        }
+.cta-button {
+display: inline-block;
+background-color: #e8b84b;
+color: #0b0f17;
+font-weight: 700;
+font-size: 1.05rem;
+padding: 14px 36px;
+border-radius: 8px;
+transition: background-color 0.2s;
+}
 
-        .cta-boks h2 {
-            margin-top: 0;
-            color: #e8b84b;
-            font-size: 1.5rem;
-        }
+.cta-button:hover {
+background-color: #d4a53e;
+text-decoration: none;
+}
 
-        .cta-boks p {
-            color: #8d97b0;
-            font-size: 1.05rem;
-            max-width: 520px;
-            margin: 0 auto 24px;
-        }
+footer {
+max-width: 900px;
+margin: 0 auto;
+padding: 32px 20px;
+border-top: 1px solid rgba(255,255,255,0.07);
+text-align: center;
+}
 
-        .cta-knapp {
-            display: inline-block;
-            background-color: #e8b84b;
-            color: #0b0f17;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 15px 40px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s, transform 0.2s;
-        }
+.footer-logo {
+font-size: 1.2rem;
+font-weight: 800;
+margin-bottom: 10px;
+}
 
-        .cta-knapp:hover {
-            background-color: #f5c95e;
-            text-decoration: none;
-            transform: translateY(-2px);
-        }
+.footer-disclaimer {
+color: #8d97b0;
+font-size: 0.82rem;
+max-width: 540px;
+margin: 0 auto 8px;
+line-height: 1.6;
+}
 
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.07);
-            text-align: center;
-            padding: 32px 20px;
-            color: #8d97b0;
-            font-size: 0.85rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+.footer-copy {
+color: #555d73;
+font-size: 0.78rem;
+margin-top: 12px;
+}
 
-        footer .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
+.muted {
+color: #8d97b0;
+}
 
-        footer .footer-logo span.watt {
-            color: #f0f4fc;
-        }
-
-        footer .footer-logo span.guiden {
-            color: #e8b84b;
-        }
-
-        footer .provisjon {
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: #6b7490;
-        }
-
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 1.7rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .pros-cons {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 14px;
-            }
-
-            .faktaboks {
-                padding: 20px 20px;
-            }
-
-            .cta-boks {
-                padding: 28px 20px;
-            }
-
-            .sammenligning-tabell {
-                font-size: 0.85rem;
-            }
-
-            .sammenligning-tabell th, .sammenligning-tabell td {
-                padding: 10px 10px;
-            }
-        }
-    </style>
+@media (max-width: 640px) {
+h1 {
+font-size: 1.7rem;
+}
+h2 {
+font-size: 1.25rem;
+}
+.pros-cons {
+grid-template-columns: 1fr;
+}
+nav ul {
+gap: 14px;
+}
+.comparison-table {
+font-size: 0.85rem;
+}
+.comparison-table th, .comparison-table td {
+padding: 9px 8px;
+}
+}
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-logo"><span class="watt">Watt</span><span class="guiden">guiden</span></div>
-        <ul>
-            <li><a href="index.html">Hjem</a></li>
-            <li><a href="index.html#kalkulator">Kalkulator</a></li>
-            <li><a href="index.html#leverandorer">Leverandører</a></li>
-        </ul>
-    </nav>
+<nav>
+<div class="logo"><span class="watt">Watt</span><span class="guiden">guiden</span></div>
+<ul>
+<li><a href="index.html">Hjem</a></li>
+<li><a href="index.html#sammenlign">Sammenlign</a></li>
+<li><a href="index.html#kalkulator">Kalkulator</a></li>
+</ul>
+</nav>
 
-    <main>
-        <div class="breadcrumb">
-            <a href="index.html">Hjem</a> / <a href="index.html#leverandorer">Leverandører</a> / NTE strøm
-        </div>
+<main>
+<div class="breadcrumb">
+<a href="index.html">Hjem</a> / <a href="index.html#sammenlign">Strømleverandører</a> / NTE strøm
+</div>
 
-        <p class="meta-date">Publisert 20. april 2026 · Sist oppdatert 20. april 2026</p>
+<h1>NTE strøm – passer det <span>for deg?</span></h1>
+<p class="meta">Publisert 7. september 2026 · Skrevet av redaksjonen i Wattguiden</p>
 
-        <h1>NTE strøm – <span>passer det for deg?</span></h1>
+<p>NTE (Nord-Trøndelag Elektrisitetsverk) er en av Norges eldste og mest etablerte kraftleverandører. Med røtter tilbake til 1919 har selskapet bygget seg opp som en solid regional aktør som i dag leverer strøm til kunder over hele landet. Men betyr lang historie nødvendigvis at du får den beste avtalen? I denne guiden ser vi nærmere på hva NTE faktisk tilbyr, hva det koster, og hvordan selskapet stiller seg mot konkurrenter som Tibber, Fjordkraft, Cheap Energy, Jærkraft og Hafslund.</p>
 
-        <p class="intro">
-            NTE er en av Norges eldste strømleverandører med røtter i Trøndelag. Men betyr lang historie automatisk at de er det beste valget for lommeboken din? Vi har sett nærmere på priser, avtaletyper og kundeservice – og sammenlignet NTE med konkurrenter som Tibber, Fjordkraft, Hafslund, Cheap Energy og Jærkraft.
-        </p>
+<div class="faktaboks">
+<h3>Faktaboks – NTE strøm i korte trekk</h3>
+<ul>
+<li>Offentlig eid selskap med hovedkontor i Steinkjer, Trøndelag</li>
+<li>Tilbyr spotpris, fastpris og variabel pris til privatkunder</li>
+<li>Månedlig fastbeløp fra ca. 39–49 kr/mnd. (avhengig av avtale)</li>
+<li>Egen app for forbruksoversikt og fakturahåndtering</li>
+<li>Leverer også bredbånd, noe som kan gi rabatt ved å samle tjenester</li>
+</ul>
+</div>
 
-        <div class="faktaboks">
-            <h3>Kort om NTE strøm – nøkkelpunkter</h3>
-            <ul>
-                <li>NTE (Nord-Trøndelag Elektrisitetsverk) ble grunnlagt i 1919 og er heleid av trønderske kommuner</li>
-                <li>Tilbyr spotpris, variabel pris og fastprisavtaler til kunder over hele Norge</li>
-                <li>Har egen app med forbruksoversikt og fakturahåndtering</li>
-                <li>Månedlig fastbeløp (påslag) varierer fra ca. 0–49 kr/mnd avhengig av avtale</li>
-                <li>Scorer jevnt på kundetilfredshet, men ikke blant de aller billigste i 2026</li>
-            </ul>
-        </div>
+<h2>Hvilke strømavtaler tilbyr NTE?</h2>
 
-        <h2>Hvem er NTE, og hva tilbyr de?</h2>
+<p>NTE har flere avtaletyper som dekker ulike behov. For de fleste norske husstander i 2026 er spotprisavtalen det mest relevante alternativet, men NTE gir deg også muligheten til å binde prisen om du ønsker forutsigbarhet.</p>
 
-        <p>
-            NTE har levert strøm til norske husholdninger i over hundre år. Selskapet er eid av 23 kommuner i det tidligere Nord-Trøndelag, og har bygget seg opp som en solid regional aktør. De siste årene har NTE ekspandert nasjonalt og konkurrerer nå om kunder i alle prisområder – fra Kristiansand til Tromsø.
-        </p>
+<h3>NTE Spot</h3>
+<p>Dette er NTEs spotprisavtale der du betaler markedspris time for time, pluss et påslag og et månedlig fastbeløp. Påslaget har historisk ligget mellom 1 og 4 øre/kWh, noe som plasserer NTE i midtsjiktet sammenlignet med andre leverandører. Til sammenligning opererer Tibber med null påslag og et fast månedsbeløp på 49 kr, mens Cheap Energy ofte har svært lave påslag for å tiltrekke seg prisbevisste kunder.</p>
 
-        <p>
-            Som strømleverandør tilbyr NTE flere avtaletyper. Den mest populære er <strong>NTE Spot</strong>, en klassisk spotprisavtale der du betaler markedspris for strømmen time for time, pluss et lite påslag og en månedlig fastpris. I tillegg har de variabelprisavtaler og fastprisavtaler som kan passe for deg som ønsker mer forutsigbarhet.
-        </p>
+<h3>NTE Fastpris</h3>
+<p>Med fastprisavtalen låser du strømprisen for en bestemt periode – typisk 6 eller 12 måneder. Dette kan lønne seg dersom markedet er på vei opp, men historisk sett har norske forbrukere som hovedregel betalt mer med fastpris enn med spotpris over tid. NTEs fastprisavtaler har vært konkurransedyktige i perioder med høy volatilitet, men du bør alltid sjekke gjeldende vilkår og sammenligne med Fjordkraft og Hafslund som også tilbyr lignende bindingsavtaler.</p>
 
-        <p>
-            NTE har også utviklet en egen kundeapp som gir oversikt over strømforbruket ditt, varsler om pristopper og lar deg håndtere fakturaer digitalt. Appen er funksjonell, men ligger per april 2026 et stykke bak Tibber-appen når det gjelder smartstyring og integrasjon med smarthus-utstyr.
-        </p>
+<h3>NTE Variabel pris</h3>
+<p>Den variable avtalen justeres kvartalsvis og gir en viss forutsigbarhet uten full binding. Denne avtaletypen anbefales sjelden av Wattguiden fordi den ofte ender dyrere enn spot, uten å gi den fulle tryggheten som fastpris gir. Det er et kompromiss som sjelden treffer godt.</p>
 
-        <h2>NTE sine strømavtaler i detalj</h2>
+<h2>Hva koster NTE strøm sammenlignet med konkurrentene?</h2>
 
-        <h3>NTE Spot</h3>
-        <p>
-            NTE Spot er selskapets spotprisavtale og er det mest aktuelle valget for de fleste norske strømkunder i dag. Du betaler nordpoolpris per kWh pluss et påslag som per april 2026 ligger på rundt 1,9–3,9 øre/kWh, avhengig av kampanjer og vilkår. I tillegg kommer et fast månedlig beløp på
+<p>Pris er selvfølgelig det viktigste for de fleste. Vi har satt opp en forenklet sammenligning basert på typiske vilkår per september 2026 for spotprisavtaler. Merk at påslag og fastbeløp kan endres – sjekk alltid oppdaterte priser før du bestiller.</p>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Leverandør</th>
+<th>Påslag (øre/kWh)</th>
+<th>Fastbeløp (kr/mnd)</th>
+<th>App</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NTE Spot</td>
+<td>1,90</td>
+<td>39</td>
+<td>Ja</td>
+</tr>
+<tr>
+<td>Tibber</td>
+<td>0</td>
+<td>49</td>
+<td>Ja (avansert)</td>
+</tr>
+<tr>
+<td>Cheap Energy</td>
+<td>0,50</td>
+<td>29</td>
+<td>Begrenset</td>
+</tr>
+<tr>
+<td>Fjordkraft Spot</td>
+<td>2,90</td>
+<td>0</td>
+<td>Ja</td>
+</tr>
+<tr>
+<td>Jærkraft Spot</td>
+<td>0</td>
+<td>39</td>
+<td>Nei</td>
+</tr>
+<tr>
+<td>Hafslund Spot</td>
+<td>2,49</td>
